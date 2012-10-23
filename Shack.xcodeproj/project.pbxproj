@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4654CD2F1636472E00CADDB0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD2E1636472E00CADDB0 /* Cocoa.framework */; };
+		4654CD391636472E00CADDB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD371636472E00CADDB0 /* InfoPlist.strings */; };
+		4654CD3B1636472E00CADDB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD3A1636472E00CADDB0 /* main.m */; };
+		4654CD3F1636472E00CADDB0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD3D1636472E00CADDB0 /* Credits.rtf */; };
+		4654CD421636472E00CADDB0 /* SKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD411636472E00CADDB0 /* SKAppDelegate.m */; };
+		4654CD451636472E00CADDB0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD431636472E00CADDB0 /* MainMenu.xib */; };
+		4654CD481636472E00CADDB0 /* Shack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD461636472E00CADDB0 /* Shack.xcdatamodeld */; };
+		4654CD501636472F00CADDB0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD4F1636472F00CADDB0 /* SenTestingKit.framework */; };
+		4654CD511636472F00CADDB0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD2E1636472E00CADDB0 /* Cocoa.framework */; };
+		4654CD591636472F00CADDB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD571636472F00CADDB0 /* InfoPlist.strings */; };
+		4654CD5C1636472F00CADDB0 /* ShackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD5B1636472F00CADDB0 /* ShackTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4654CD521636472F00CADDB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4654CD211636472E00CADDB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4654CD291636472E00CADDB0;
+			remoteInfo = Shack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4654CD2A1636472E00CADDB0 /* Shack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4654CD2E1636472E00CADDB0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4654CD311636472E00CADDB0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4654CD321636472E00CADDB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4654CD331636472E00CADDB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4654CD361636472E00CADDB0 /* Shack-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Shack-Info.plist"; sourceTree = "<group>"; };
+		4654CD381636472E00CADDB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4654CD3A1636472E00CADDB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4654CD3C1636472E00CADDB0 /* Shack-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Shack-Prefix.pch"; sourceTree = "<group>"; };
+		4654CD3E1636472E00CADDB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4654CD401636472E00CADDB0 /* SKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKAppDelegate.h; sourceTree = "<group>"; };
+		4654CD411636472E00CADDB0 /* SKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAppDelegate.m; sourceTree = "<group>"; };
+		4654CD441636472E00CADDB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4654CD471636472E00CADDB0 /* Shack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shack.xcdatamodel; sourceTree = "<group>"; };
+		4654CD4E1636472F00CADDB0 /* ShackTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShackTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4654CD4F1636472F00CADDB0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		4654CD561636472F00CADDB0 /* ShackTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShackTests-Info.plist"; sourceTree = "<group>"; };
+		4654CD581636472F00CADDB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4654CD5A1636472F00CADDB0 /* ShackTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShackTests.h; sourceTree = "<group>"; };
+		4654CD5B1636472F00CADDB0 /* ShackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShackTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4654CD271636472E00CADDB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4654CD2F1636472E00CADDB0 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4654CD4A1636472F00CADDB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4654CD501636472F00CADDB0 /* SenTestingKit.framework in Frameworks */,
+				4654CD511636472F00CADDB0 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4654CD1F1636472E00CADDB0 = {
+			isa = PBXGroup;
+			children = (
+				4654CD341636472E00CADDB0 /* Shack */,
+				4654CD541636472F00CADDB0 /* ShackTests */,
+				4654CD2D1636472E00CADDB0 /* Frameworks */,
+				4654CD2B1636472E00CADDB0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4654CD2B1636472E00CADDB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD2A1636472E00CADDB0 /* Shack.app */,
+				4654CD4E1636472F00CADDB0 /* ShackTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4654CD2D1636472E00CADDB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD2E1636472E00CADDB0 /* Cocoa.framework */,
+				4654CD4F1636472F00CADDB0 /* SenTestingKit.framework */,
+				4654CD301636472E00CADDB0 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4654CD301636472E00CADDB0 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD311636472E00CADDB0 /* AppKit.framework */,
+				4654CD321636472E00CADDB0 /* CoreData.framework */,
+				4654CD331636472E00CADDB0 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4654CD341636472E00CADDB0 /* Shack */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD401636472E00CADDB0 /* SKAppDelegate.h */,
+				4654CD411636472E00CADDB0 /* SKAppDelegate.m */,
+				4654CD431636472E00CADDB0 /* MainMenu.xib */,
+				4654CD461636472E00CADDB0 /* Shack.xcdatamodeld */,
+				4654CD351636472E00CADDB0 /* Supporting Files */,
+			);
+			path = Shack;
+			sourceTree = "<group>";
+		};
+		4654CD351636472E00CADDB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD361636472E00CADDB0 /* Shack-Info.plist */,
+				4654CD371636472E00CADDB0 /* InfoPlist.strings */,
+				4654CD3A1636472E00CADDB0 /* main.m */,
+				4654CD3C1636472E00CADDB0 /* Shack-Prefix.pch */,
+				4654CD3D1636472E00CADDB0 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4654CD541636472F00CADDB0 /* ShackTests */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD5A1636472F00CADDB0 /* ShackTests.h */,
+				4654CD5B1636472F00CADDB0 /* ShackTests.m */,
+				4654CD551636472F00CADDB0 /* Supporting Files */,
+			);
+			path = ShackTests;
+			sourceTree = "<group>";
+		};
+		4654CD551636472F00CADDB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD561636472F00CADDB0 /* ShackTests-Info.plist */,
+				4654CD571636472F00CADDB0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4654CD291636472E00CADDB0 /* Shack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4654CD5F1636472F00CADDB0 /* Build configuration list for PBXNativeTarget "Shack" */;
+			buildPhases = (
+				4654CD261636472E00CADDB0 /* Sources */,
+				4654CD271636472E00CADDB0 /* Frameworks */,
+				4654CD281636472E00CADDB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shack;
+			productName = Shack;
+			productReference = 4654CD2A1636472E00CADDB0 /* Shack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4654CD4D1636472F00CADDB0 /* ShackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4654CD621636472F00CADDB0 /* Build configuration list for PBXNativeTarget "ShackTests" */;
+			buildPhases = (
+				4654CD491636472F00CADDB0 /* Sources */,
+				4654CD4A1636472F00CADDB0 /* Frameworks */,
+				4654CD4B1636472F00CADDB0 /* Resources */,
+				4654CD4C1636472F00CADDB0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4654CD531636472F00CADDB0 /* PBXTargetDependency */,
+			);
+			name = ShackTests;
+			productName = ShackTests;
+			productReference = 4654CD4E1636472F00CADDB0 /* ShackTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4654CD211636472E00CADDB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SK;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Chenguang Wang";
+			};
+			buildConfigurationList = 4654CD241636472E00CADDB0 /* Build configuration list for PBXProject "Shack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4654CD1F1636472E00CADDB0;
+			productRefGroup = 4654CD2B1636472E00CADDB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4654CD291636472E00CADDB0 /* Shack */,
+				4654CD4D1636472F00CADDB0 /* ShackTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4654CD281636472E00CADDB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4654CD391636472E00CADDB0 /* InfoPlist.strings in Resources */,
+				4654CD3F1636472E00CADDB0 /* Credits.rtf in Resources */,
+				4654CD451636472E00CADDB0 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4654CD4B1636472F00CADDB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4654CD591636472F00CADDB0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4654CD4C1636472F00CADDB0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4654CD261636472E00CADDB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4654CD3B1636472E00CADDB0 /* main.m in Sources */,
+				4654CD421636472E00CADDB0 /* SKAppDelegate.m in Sources */,
+				4654CD481636472E00CADDB0 /* Shack.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4654CD491636472F00CADDB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4654CD5C1636472F00CADDB0 /* ShackTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4654CD531636472F00CADDB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4654CD291636472E00CADDB0 /* Shack */;
+			targetProxy = 4654CD521636472F00CADDB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4654CD371636472E00CADDB0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4654CD381636472E00CADDB0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4654CD3D1636472E00CADDB0 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4654CD3E1636472E00CADDB0 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4654CD431636472E00CADDB0 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4654CD441636472E00CADDB0 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		4654CD571636472F00CADDB0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4654CD581636472F00CADDB0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4654CD5D1636472F00CADDB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4654CD5E1636472F00CADDB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4654CD601636472F00CADDB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Shack/Shack-Prefix.pch";
+				INFOPLIST_FILE = "Shack/Shack-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4654CD611636472F00CADDB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Shack/Shack-Prefix.pch";
+				INFOPLIST_FILE = "Shack/Shack-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4654CD631636472F00CADDB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Shack.app/Contents/MacOS/Shack";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Shack/Shack-Prefix.pch";
+				INFOPLIST_FILE = "ShackTests/ShackTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4654CD641636472F00CADDB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Shack.app/Contents/MacOS/Shack";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Shack/Shack-Prefix.pch";
+				INFOPLIST_FILE = "ShackTests/ShackTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4654CD241636472E00CADDB0 /* Build configuration list for PBXProject "Shack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4654CD5D1636472F00CADDB0 /* Debug */,
+				4654CD5E1636472F00CADDB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4654CD5F1636472F00CADDB0 /* Build configuration list for PBXNativeTarget "Shack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4654CD601636472F00CADDB0 /* Debug */,
+				4654CD611636472F00CADDB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4654CD621636472F00CADDB0 /* Build configuration list for PBXNativeTarget "ShackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4654CD631636472F00CADDB0 /* Debug */,
+				4654CD641636472F00CADDB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4654CD461636472E00CADDB0 /* Shack.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4654CD471636472E00CADDB0 /* Shack.xcdatamodel */,
+			);
+			currentVersion = 4654CD471636472E00CADDB0 /* Shack.xcdatamodel */;
+			path = Shack.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4654CD211636472E00CADDB0 /* Project object */;
+}
