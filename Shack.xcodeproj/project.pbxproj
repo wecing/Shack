@@ -18,6 +18,7 @@
 		4654CD511636472F00CADDB0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD2E1636472E00CADDB0 /* Cocoa.framework */; };
 		4654CD591636472F00CADDB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD571636472F00CADDB0 /* InfoPlist.strings */; };
 		4654CD5C1636472F00CADDB0 /* ShackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD5B1636472F00CADDB0 /* ShackTests.m */; };
+		4654CD671636481F00CADDB0 /* SKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD661636481F00CADDB0 /* SKController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		4654CD581636472F00CADDB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4654CD5A1636472F00CADDB0 /* ShackTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShackTests.h; sourceTree = "<group>"; };
 		4654CD5B1636472F00CADDB0 /* ShackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShackTests.m; sourceTree = "<group>"; };
+		4654CD651636481F00CADDB0 /* SKController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKController.h; path = src/SKController.h; sourceTree = "<group>"; };
+		4654CD661636481F00CADDB0 /* SKController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKController.m; path = src/SKController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 				4654CD431636472E00CADDB0 /* MainMenu.xib */,
 				4654CD461636472E00CADDB0 /* Shack.xcdatamodeld */,
 				4654CD351636472E00CADDB0 /* Supporting Files */,
+				4654CD681636482C00CADDB0 /* src */,
 			);
 			path = Shack;
 			sourceTree = "<group>";
@@ -154,6 +158,15 @@
 				4654CD571636472F00CADDB0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4654CD681636482C00CADDB0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD651636481F00CADDB0 /* SKController.h */,
+				4654CD661636481F00CADDB0 /* SKController.m */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +281,7 @@
 				4654CD3B1636472E00CADDB0 /* main.m in Sources */,
 				4654CD421636472E00CADDB0 /* SKAppDelegate.m in Sources */,
 				4654CD481636472E00CADDB0 /* Shack.xcdatamodeld in Sources */,
+				4654CD671636481F00CADDB0 /* SKController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
