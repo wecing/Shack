@@ -19,6 +19,7 @@
 		4654CD591636472F00CADDB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD571636472F00CADDB0 /* InfoPlist.strings */; };
 		4654CD5C1636472F00CADDB0 /* ShackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD5B1636472F00CADDB0 /* ShackTests.m */; };
 		4654CD671636481F00CADDB0 /* SKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD661636481F00CADDB0 /* SKController.m */; };
+		4654CD7216364B1E00CADDB0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD7116364B1E00CADDB0 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		4654CD5B1636472F00CADDB0 /* ShackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShackTests.m; sourceTree = "<group>"; };
 		4654CD651636481F00CADDB0 /* SKController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKController.h; path = src/SKController.h; sourceTree = "<group>"; };
 		4654CD661636481F00CADDB0 /* SKController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKController.m; path = src/SKController.m; sourceTree = "<group>"; };
+		4654CD7116364B1E00CADDB0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				4654CD3A1636472E00CADDB0 /* main.m */,
 				4654CD3C1636472E00CADDB0 /* Shack-Prefix.pch */,
 				4654CD3D1636472E00CADDB0 /* Credits.rtf */,
+				4654CD7116364B1E00CADDB0 /* README.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				4654CD391636472E00CADDB0 /* InfoPlist.strings in Resources */,
 				4654CD3F1636472E00CADDB0 /* Credits.rtf in Resources */,
 				4654CD451636472E00CADDB0 /* MainMenu.xib in Resources */,
+				4654CD7216364B1E00CADDB0 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +465,7 @@
 				4654CD611636472F00CADDB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4654CD621636472F00CADDB0 /* Build configuration list for PBXNativeTarget "ShackTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +474,7 @@
 				4654CD641636472F00CADDB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
