@@ -20,6 +20,9 @@
 		4654CD5C1636472F00CADDB0 /* ShackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD5B1636472F00CADDB0 /* ShackTests.m */; };
 		4654CD671636481F00CADDB0 /* SKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD661636481F00CADDB0 /* SKController.m */; };
 		4654CD7216364B1E00CADDB0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD7116364B1E00CADDB0 /* README.md */; };
+		4654CD7716364CB900CADDB0 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD7616364CB900CADDB0 /* GCDAsyncSocket.m */; };
+		4654CD7B16364D7600CADDB0 /* SKSocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD7A16364D7600CADDB0 /* SKSocketController.m */; };
+		4654CD7D1636519500CADDB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD7C1636519500CADDB0 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,11 @@
 		4654CD651636481F00CADDB0 /* SKController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKController.h; path = src/SKController.h; sourceTree = "<group>"; };
 		4654CD661636481F00CADDB0 /* SKController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKController.m; path = src/SKController.m; sourceTree = "<group>"; };
 		4654CD7116364B1E00CADDB0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		4654CD7516364CB900CADDB0 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = external/GCDAsyncSocket/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		4654CD7616364CB900CADDB0 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = external/GCDAsyncSocket/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		4654CD7916364D7600CADDB0 /* SKSocketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSocketController.h; path = src/SKSocketController.h; sourceTree = "<group>"; };
+		4654CD7A16364D7600CADDB0 /* SKSocketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSocketController.m; path = src/SKSocketController.m; sourceTree = "<group>"; };
+		4654CD7C1636519500CADDB0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4654CD7D1636519500CADDB0 /* Security.framework in Frameworks */,
 				4654CD2F1636472E00CADDB0 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,8 +91,10 @@
 		4654CD1F1636472E00CADDB0 = {
 			isa = PBXGroup;
 			children = (
+				4654CD7C1636519500CADDB0 /* Security.framework */,
 				4654CD341636472E00CADDB0 /* Shack */,
 				4654CD541636472F00CADDB0 /* ShackTests */,
+				4654CD7816364D1100CADDB0 /* External */,
 				4654CD2D1636472E00CADDB0 /* Frameworks */,
 				4654CD2B1636472E00CADDB0 /* Products */,
 			);
@@ -168,8 +179,29 @@
 			children = (
 				4654CD651636481F00CADDB0 /* SKController.h */,
 				4654CD661636481F00CADDB0 /* SKController.m */,
+				4654CD7916364D7600CADDB0 /* SKSocketController.h */,
+				4654CD7A16364D7600CADDB0 /* SKSocketController.m */,
 			);
 			name = src;
+			sourceTree = "<group>";
+		};
+		4654CD7416364C7B00CADDB0 /* GCDAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD7516364CB900CADDB0 /* GCDAsyncSocket.h */,
+				4654CD7616364CB900CADDB0 /* GCDAsyncSocket.m */,
+			);
+			name = GCDAsyncSocket;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		4654CD7816364D1100CADDB0 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD7416364C7B00CADDB0 /* GCDAsyncSocket */,
+			);
+			name = External;
+			path = Shack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +318,8 @@
 				4654CD421636472E00CADDB0 /* SKAppDelegate.m in Sources */,
 				4654CD481636472E00CADDB0 /* Shack.xcdatamodeld in Sources */,
 				4654CD671636481F00CADDB0 /* SKController.m in Sources */,
+				4654CD7716364CB900CADDB0 /* GCDAsyncSocket.m in Sources */,
+				4654CD7B16364D7600CADDB0 /* SKSocketController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
