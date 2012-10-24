@@ -136,6 +136,7 @@
 				4654CD411636472E00CADDB0 /* SKAppDelegate.m */,
 				4654CD431636472E00CADDB0 /* MainMenu.xib */,
 				4654CD461636472E00CADDB0 /* Shack.xcdatamodeld */,
+				4654CD7116364B1E00CADDB0 /* README.md */,
 				4654CD351636472E00CADDB0 /* Supporting Files */,
 				4654CD681636482C00CADDB0 /* src */,
 			);
@@ -150,7 +151,6 @@
 				4654CD3A1636472E00CADDB0 /* main.m */,
 				4654CD3C1636472E00CADDB0 /* Shack-Prefix.pch */,
 				4654CD3D1636472E00CADDB0 /* Credits.rtf */,
-				4654CD7116364B1E00CADDB0 /* README.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
