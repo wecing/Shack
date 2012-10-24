@@ -33,8 +33,9 @@ public:
     {
         registerMethod("echo",      make_method(this, &ShackBrowserHelperPluginAPI::echo));
         registerMethod("testEvent", make_method(this, &ShackBrowserHelperPluginAPI::testEvent));
-        registerMethod("add",       make_method(this, &ShackBrowserHelperPluginAPI::add));
-        registerMethod("call_shack",       make_method(this, &ShackBrowserHelperPluginAPI::call_shack));
+        // registerMethod("add",       make_method(this, &ShackBrowserHelperPluginAPI::add));
+        // registerMethod("call_shack",       make_method(this, &ShackBrowserHelperPluginAPI::call_shack));
+        registerMethod("addSongs",  make_method(this, &ShackBrowserHelperPluginAPI::addSongs));
 
         
         // Read-write property
@@ -78,10 +79,11 @@ public:
     void testEvent();
 
     // Test method
-    int add(int a, int b, int c);
+    // int add(int a, int b, int c);
 
     // real guts
-    void call_shack(const std::string& msg);
+    // void call_shack(const std::string& msg);
+    void addSongs(const std::string& msg);
 
 private:
     ShackBrowserHelperPluginWeakPtr m_plugin;
