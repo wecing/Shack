@@ -46,6 +46,10 @@
 
 + (void)socket:(id)sender didReadData:(NSData *)data withTag:(long)tag {
     NSLog(@"Received data from client."); // DEBUG
+    
+    // TODO: the returned string is like:
+    //           /song/playlist/id/1771257374%2C1771257375%2C1771257376%2C1771257377/object_name/default/object_id/0
+    //       send GET request to xiami to get the XML.
     printf("=====\n%s=====\n\n", [data bytes]);
 }
 
