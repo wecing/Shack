@@ -9,8 +9,6 @@
 #import "SKSocketController.h"
 #import "GCDAsyncSocket.h"
 
-// #import "GTMNSString+HTML.h"
-
 #define SK_DEFAULT_PORT 6578
 
 @interface SKSocketController ()
@@ -146,7 +144,7 @@
     }
     
     
-    // Deencrypting location:
+    // Decrypting location:
     //     sample location: 5h3%.i%2%8F6%15_5.tA2x.2F24515773Emt%FinF1F53%E7368pp2fae446%72117493%F3mt%5321F_24%7
     //
     // The first character is always an integer; let's call it w.

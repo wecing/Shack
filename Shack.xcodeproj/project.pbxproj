@@ -23,6 +23,8 @@
 		4654CD7716364CB900CADDB0 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD7616364CB900CADDB0 /* GCDAsyncSocket.m */; };
 		4654CD7B16364D7600CADDB0 /* SKSocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD7A16364D7600CADDB0 /* SKSocketController.m */; };
 		4654CD7D1636519500CADDB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD7C1636519500CADDB0 /* Security.framework */; };
+		46A17B12163A157A002B85CF /* SKSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A17B11163A157A002B85CF /* SKSplitView.m */; };
+		46B06F081639EE0C00A93F52 /* SKSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,10 @@
 		4654CD7916364D7600CADDB0 /* SKSocketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSocketController.h; path = src/SKSocketController.h; sourceTree = "<group>"; };
 		4654CD7A16364D7600CADDB0 /* SKSocketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSocketController.m; path = src/SKSocketController.m; sourceTree = "<group>"; };
 		4654CD7C1636519500CADDB0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		46A17B10163A157A002B85CF /* SKSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSplitView.h; path = src/SKSplitView.h; sourceTree = "<group>"; };
+		46A17B11163A157A002B85CF /* SKSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSplitView.m; path = src/SKSplitView.m; sourceTree = "<group>"; };
+		46B06F061639EE0C00A93F52 /* SKSplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSplitViewDelegate.h; path = src/SKSplitViewDelegate.h; sourceTree = "<group>"; };
+		46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSplitViewDelegate.m; path = src/SKSplitViewDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,10 @@
 				4654CD661636481F00CADDB0 /* SKController.m */,
 				4654CD7916364D7600CADDB0 /* SKSocketController.h */,
 				4654CD7A16364D7600CADDB0 /* SKSocketController.m */,
+				46B06F061639EE0C00A93F52 /* SKSplitViewDelegate.h */,
+				46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */,
+				46A17B10163A157A002B85CF /* SKSplitView.h */,
+				46A17B11163A157A002B85CF /* SKSplitView.m */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -320,6 +330,8 @@
 				4654CD671636481F00CADDB0 /* SKController.m in Sources */,
 				4654CD7716364CB900CADDB0 /* GCDAsyncSocket.m in Sources */,
 				4654CD7B16364D7600CADDB0 /* SKSocketController.m in Sources */,
+				46B06F081639EE0C00A93F52 /* SKSplitViewDelegate.m in Sources */,
+				46A17B12163A157A002B85CF /* SKSplitView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

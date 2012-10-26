@@ -9,6 +9,10 @@
 #import "SKAppDelegate.h"
 #import "SKSocketController.h"
 
+@interface SKAppDelegate ()
+@property (readwrite) IBOutlet SKSplitView *splitView;
+@end
+
 @implementation SKAppDelegate
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -19,6 +23,7 @@
 {
     // Insert code here to initialize your application
     [SKSocketController listenToSocket];
+    [[self splitView] setPosition:160.0 ofDividerAtIndex:0];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "org.wecing.Shack" in the user's Application Support directory.
