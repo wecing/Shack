@@ -7,8 +7,14 @@
 //
 
 #import "SKController.h"
+#import "SKPlaylistController.h"
 
 @implementation SKController
+
+//- (void)awakeFromNib {
+//    NSLog(@"Hmm...");
+//    [[SKPlaylistController sharedInstance] expandNodes];
+//}
 
 - (IBAction)problem:(id)sender {
     NSLog(@"Problem?");

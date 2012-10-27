@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46198B74163B22AF004712F4 /* SKPlaylistController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46198B73163B22AF004712F4 /* SKPlaylistController.m */; };
+		46198B78163B4D7E004712F4 /* SKBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 46198B77163B4D7D004712F4 /* SKBoolean.m */; };
 		4654CD2F1636472E00CADDB0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD2E1636472E00CADDB0 /* Cocoa.framework */; };
 		4654CD391636472E00CADDB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD371636472E00CADDB0 /* InfoPlist.strings */; };
 		4654CD3B1636472E00CADDB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD3A1636472E00CADDB0 /* main.m */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46198B72163B22AF004712F4 /* SKPlaylistController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKPlaylistController.h; path = src/SKPlaylistController.h; sourceTree = "<group>"; };
+		46198B73163B22AF004712F4 /* SKPlaylistController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKPlaylistController.m; path = src/SKPlaylistController.m; sourceTree = "<group>"; };
+		46198B76163B4D7D004712F4 /* SKBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKBoolean.h; path = src/SKBoolean.h; sourceTree = "<group>"; };
+		46198B77163B4D7D004712F4 /* SKBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKBoolean.m; path = src/SKBoolean.m; sourceTree = "<group>"; };
 		4654CD2A1636472E00CADDB0 /* Shack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4654CD2E1636472E00CADDB0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4654CD311636472E00CADDB0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -191,6 +197,10 @@
 				46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */,
 				46A17B10163A157A002B85CF /* SKSplitView.h */,
 				46A17B11163A157A002B85CF /* SKSplitView.m */,
+				46198B72163B22AF004712F4 /* SKPlaylistController.h */,
+				46198B73163B22AF004712F4 /* SKPlaylistController.m */,
+				46198B76163B4D7D004712F4 /* SKBoolean.h */,
+				46198B77163B4D7D004712F4 /* SKBoolean.m */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -332,6 +342,8 @@
 				4654CD7B16364D7600CADDB0 /* SKSocketController.m in Sources */,
 				46B06F081639EE0C00A93F52 /* SKSplitViewDelegate.m in Sources */,
 				46A17B12163A157A002B85CF /* SKSplitView.m in Sources */,
+				46198B74163B22AF004712F4 /* SKPlaylistController.m in Sources */,
+				46198B78163B4D7E004712F4 /* SKBoolean.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
