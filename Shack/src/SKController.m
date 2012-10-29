@@ -9,12 +9,12 @@
 #import "SKController.h"
 #import "SKPlaylistController.h"
 
-@implementation SKController
+@interface SKController ()
+@property (readwrite) IBOutlet NSTableHeaderView *songTableHeader;
+@property (readwrite) IBOutlet NSTableView *songTable;
+@end
 
-//- (void)awakeFromNib {
-//    NSLog(@"Hmm...");
-//    [[SKPlaylistController sharedInstance] expandNodes];
-//}
+@implementation SKController
 
 - (IBAction)problem:(id)sender {
     NSLog(@"Problem?");

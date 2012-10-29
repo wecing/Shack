@@ -24,7 +24,8 @@
 {
     // Insert code here to initialize your application
     [SKSocketController listenToSocket];
-    [[self splitView] setPosition:160.0 ofDividerAtIndex:0];
+    // [[self splitView] setPosition:160.0 ofDividerAtIndex:0];
+    [[self splitView] setPosition:0 ofDividerAtIndex:0]; // hide it, at least for now...
     [[SKPlaylistController sharedInstance] expandNodes];
 }
 

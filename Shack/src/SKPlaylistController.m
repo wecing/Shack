@@ -36,7 +36,6 @@ static SKPlaylistController *shared = nil;
 - (void)expandNodes {
     // FIXME: rewrite this to give a better control on which item
     //        will be expanded initially.
-    NSLog(@"%@", [self outlineView]);
     [[self outlineView] expandItem:nil expandChildren:YES];
 }
 
@@ -49,7 +48,6 @@ static SKPlaylistController *shared = nil;
         return shared; // Well... this is stupid, I guess.
     }
     
-    NSLog(@"in init!");
     self = [super init];
     if (self) {
         // NSCell *rootItemDemoOne = [[NSCell alloc] initTextCell:@"Hello"];
@@ -121,8 +119,8 @@ static SKPlaylistController *shared = nil;
 // we have no need to implement this at all?
 //
 - (id)outlineView:(NSOutlineView *)outlineView
-    objectValueForTableColumn:(NSTableColumn *)tableColumn
-                       byItem:(id)item {
+      objectValueForTableColumn:(NSTableColumn *)tableColumn
+                         byItem:(id)item {
     // Well... we have only one column here right?
     return item;
     // return [item stringValue];

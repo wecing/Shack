@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		46198B74163B22AF004712F4 /* SKPlaylistController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46198B73163B22AF004712F4 /* SKPlaylistController.m */; };
 		46198B78163B4D7E004712F4 /* SKBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 46198B77163B4D7D004712F4 /* SKBoolean.m */; };
+		46325C18163E8924004F2129 /* SKSongTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46325C17163E8924004F2129 /* SKSongTableController.m */; };
+		46325C1B163EA2DA004F2129 /* TO_BE_FIXED in Resources */ = {isa = PBXBuildFile; fileRef = 46325C1A163EA2D9004F2129 /* TO_BE_FIXED */; };
 		4654CD2F1636472E00CADDB0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD2E1636472E00CADDB0 /* Cocoa.framework */; };
 		4654CD391636472E00CADDB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD371636472E00CADDB0 /* InfoPlist.strings */; };
 		4654CD3B1636472E00CADDB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD3A1636472E00CADDB0 /* main.m */; };
@@ -44,6 +46,9 @@
 		46198B73163B22AF004712F4 /* SKPlaylistController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKPlaylistController.m; path = src/SKPlaylistController.m; sourceTree = "<group>"; };
 		46198B76163B4D7D004712F4 /* SKBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKBoolean.h; path = src/SKBoolean.h; sourceTree = "<group>"; };
 		46198B77163B4D7D004712F4 /* SKBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKBoolean.m; path = src/SKBoolean.m; sourceTree = "<group>"; };
+		46325C16163E8923004F2129 /* SKSongTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSongTableController.h; path = src/SKSongTableController.h; sourceTree = "<group>"; };
+		46325C17163E8924004F2129 /* SKSongTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSongTableController.m; path = src/SKSongTableController.m; sourceTree = "<group>"; };
+		46325C1A163EA2D9004F2129 /* TO_BE_FIXED */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TO_BE_FIXED; sourceTree = "<group>"; };
 		4654CD2A1636472E00CADDB0 /* Shack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4654CD2E1636472E00CADDB0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4654CD311636472E00CADDB0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -149,6 +154,7 @@
 				4654CD431636472E00CADDB0 /* MainMenu.xib */,
 				4654CD461636472E00CADDB0 /* Shack.xcdatamodeld */,
 				4654CD7116364B1E00CADDB0 /* README.md */,
+				46325C1A163EA2D9004F2129 /* TO_BE_FIXED */,
 				4654CD351636472E00CADDB0 /* Supporting Files */,
 				4654CD681636482C00CADDB0 /* src */,
 			);
@@ -201,6 +207,8 @@
 				46198B73163B22AF004712F4 /* SKPlaylistController.m */,
 				46198B76163B4D7D004712F4 /* SKBoolean.h */,
 				46198B77163B4D7D004712F4 /* SKBoolean.m */,
+				46325C16163E8923004F2129 /* SKSongTableController.h */,
+				46325C17163E8924004F2129 /* SKSongTableController.m */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				4654CD3F1636472E00CADDB0 /* Credits.rtf in Resources */,
 				4654CD451636472E00CADDB0 /* MainMenu.xib in Resources */,
 				4654CD7216364B1E00CADDB0 /* README.md in Resources */,
+				46325C1B163EA2DA004F2129 /* TO_BE_FIXED in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +353,7 @@
 				46A17B12163A157A002B85CF /* SKSplitView.m in Sources */,
 				46198B74163B22AF004712F4 /* SKPlaylistController.m in Sources */,
 				46198B78163B4D7E004712F4 /* SKBoolean.m in Sources */,
+				46325C18163E8924004F2129 /* SKSongTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

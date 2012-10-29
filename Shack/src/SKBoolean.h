@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+// FIXME: replace this with NSNumber.
+//        (hint: [NSNumber numberWithBool:YES/NO]).
+
 @interface SKBoolean : NSObject {
 @private
     BOOL v;

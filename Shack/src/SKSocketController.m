@@ -8,6 +8,7 @@
 
 #import "SKSocketController.h"
 #import "GCDAsyncSocket.h"
+#import "SKSongTableController.h"
 
 #define SK_DEFAULT_PORT 6578
 
@@ -44,6 +45,8 @@
     [newSocket readDataToData:separator withTimeout:-1 tag:0];
 }
 
+// FIXME: this should be asynchronized.
+//        fetching too much data may cause the program to "stop running" for a while.
 + (void)socket:(id)sender didReadData:(NSData *)data withTag:(long)tag {
     // For the sake of myself:
     //     data received is espected to be the same as what the flash player receives.
@@ -191,7 +194,7 @@
         for (int j = 0; j < [location length]; j++) {
             if (len % w != 0) {
                 if ((_i >= (len % w) && _j == (int)ceil(len / w)) ||
-                    (_i < (len % w)  && _j == (int)ceil(len / w) + 1)) {
+                    (_i <  (len % w) && _j == (int)ceil(len / w) + 1)) {
                     _i++;
                     _j = 0;
                 }
@@ -220,7 +223,9 @@
     }
     
     // for now... just print it out.
-    NSLog(@"%@", tracksInfoDictArray);
+    // NSLog(@"%@", tracksInfoDictArray);
+    
+    [[SKSongTableController sharedInstance] appendSongs:tracksInfoDictArray];
 }
 
 @end

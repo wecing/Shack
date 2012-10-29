@@ -10,6 +10,9 @@
 
 @interface SKController : NSObject
 
+@property (readonly) IBOutlet NSTableHeaderView *songTableHeader;
+@property (readonly) IBOutlet NSTableView *songTable;
+
 - (IBAction)problem:(id)sender;
 
 @end
