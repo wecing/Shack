@@ -10,9 +10,11 @@
 
 @interface SKController : NSObject
 
-@property (readonly) IBOutlet NSTableHeaderView *songTableHeader;
-@property (readonly) IBOutlet NSTableView *songTable;
+@property IBOutlet NSTableHeaderView *songTableHeader;
+@property IBOutlet NSTableView *songTable;
 
-- (IBAction)problem:(id)sender;
+@property IBOutlet NSButton *playPauseButton;
+
+- (IBAction)togglePlayPause:(id)sender;
 
 @end

@@ -10,7 +10,10 @@
 		46198B74163B22AF004712F4 /* SKPlaylistController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46198B73163B22AF004712F4 /* SKPlaylistController.m */; };
 		46198B78163B4D7E004712F4 /* SKBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 46198B77163B4D7D004712F4 /* SKBoolean.m */; };
 		46325C18163E8924004F2129 /* SKSongTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46325C17163E8924004F2129 /* SKSongTableController.m */; };
-		46325C1B163EA2DA004F2129 /* TO_BE_FIXED in Resources */ = {isa = PBXBuildFile; fileRef = 46325C1A163EA2D9004F2129 /* TO_BE_FIXED */; };
+		46325C1B163EA2DA004F2129 /* TO_BE_FIXED.md in Resources */ = {isa = PBXBuildFile; fileRef = 46325C1A163EA2D9004F2129 /* TO_BE_FIXED.md */; };
+		46325C21163F6FF9004F2129 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46325C20163F6FF9004F2129 /* AVFoundation.framework */; };
+		46325C25163F75E0004F2129 /* SKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 46325C24163F75E0004F2129 /* SKAudioPlayer.m */; };
+		46325C28163F79F9004F2129 /* SKPlaylistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46325C27163F79F8004F2129 /* SKPlaylistManager.m */; };
 		4654CD2F1636472E00CADDB0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD2E1636472E00CADDB0 /* Cocoa.framework */; };
 		4654CD391636472E00CADDB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4654CD371636472E00CADDB0 /* InfoPlist.strings */; };
 		4654CD3B1636472E00CADDB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD3A1636472E00CADDB0 /* main.m */; };
@@ -27,6 +30,7 @@
 		4654CD7716364CB900CADDB0 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD7616364CB900CADDB0 /* GCDAsyncSocket.m */; };
 		4654CD7B16364D7600CADDB0 /* SKSocketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4654CD7A16364D7600CADDB0 /* SKSocketController.m */; };
 		4654CD7D1636519500CADDB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD7C1636519500CADDB0 /* Security.framework */; };
+		4691A20F1642276E00698DA3 /* SKXiamiLinkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4691A20E1642276E00698DA3 /* SKXiamiLinkHandler.m */; };
 		46A17B12163A157A002B85CF /* SKSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A17B11163A157A002B85CF /* SKSplitView.m */; };
 		46B06F081639EE0C00A93F52 /* SKSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */; };
 /* End PBXBuildFile section */
@@ -48,7 +52,12 @@
 		46198B77163B4D7D004712F4 /* SKBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKBoolean.m; path = src/SKBoolean.m; sourceTree = "<group>"; };
 		46325C16163E8923004F2129 /* SKSongTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSongTableController.h; path = src/SKSongTableController.h; sourceTree = "<group>"; };
 		46325C17163E8924004F2129 /* SKSongTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSongTableController.m; path = src/SKSongTableController.m; sourceTree = "<group>"; };
-		46325C1A163EA2D9004F2129 /* TO_BE_FIXED */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TO_BE_FIXED; sourceTree = "<group>"; };
+		46325C1A163EA2D9004F2129 /* TO_BE_FIXED.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TO_BE_FIXED.md; sourceTree = "<group>"; };
+		46325C20163F6FF9004F2129 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		46325C23163F75E0004F2129 /* SKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKAudioPlayer.h; path = src/SKAudioPlayer.h; sourceTree = "<group>"; };
+		46325C24163F75E0004F2129 /* SKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKAudioPlayer.m; path = src/SKAudioPlayer.m; sourceTree = "<group>"; };
+		46325C26163F79F8004F2129 /* SKPlaylistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKPlaylistManager.h; path = src/SKPlaylistManager.h; sourceTree = "<group>"; };
+		46325C27163F79F8004F2129 /* SKPlaylistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKPlaylistManager.m; path = src/SKPlaylistManager.m; sourceTree = "<group>"; };
 		4654CD2A1636472E00CADDB0 /* Shack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4654CD2E1636472E00CADDB0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4654CD311636472E00CADDB0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -77,6 +86,8 @@
 		4654CD7916364D7600CADDB0 /* SKSocketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSocketController.h; path = src/SKSocketController.h; sourceTree = "<group>"; };
 		4654CD7A16364D7600CADDB0 /* SKSocketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSocketController.m; path = src/SKSocketController.m; sourceTree = "<group>"; };
 		4654CD7C1636519500CADDB0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4691A20D1642276E00698DA3 /* SKXiamiLinkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKXiamiLinkHandler.h; path = src/SKXiamiLinkHandler.h; sourceTree = "<group>"; };
+		4691A20E1642276E00698DA3 /* SKXiamiLinkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKXiamiLinkHandler.m; path = src/SKXiamiLinkHandler.m; sourceTree = "<group>"; };
 		46A17B10163A157A002B85CF /* SKSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSplitView.h; path = src/SKSplitView.h; sourceTree = "<group>"; };
 		46A17B11163A157A002B85CF /* SKSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSplitView.m; path = src/SKSplitView.m; sourceTree = "<group>"; };
 		46B06F061639EE0C00A93F52 /* SKSplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSplitViewDelegate.h; path = src/SKSplitViewDelegate.h; sourceTree = "<group>"; };
@@ -88,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46325C21163F6FF9004F2129 /* AVFoundation.framework in Frameworks */,
 				4654CD7D1636519500CADDB0 /* Security.framework in Frameworks */,
 				4654CD2F1636472E00CADDB0 /* Cocoa.framework in Frameworks */,
 			);
@@ -105,10 +117,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46325C29163F7A38004F2129 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4654CD651636481F00CADDB0 /* SKController.h */,
+				4654CD661636481F00CADDB0 /* SKController.m */,
+				46B06F061639EE0C00A93F52 /* SKSplitViewDelegate.h */,
+				46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */,
+				46A17B10163A157A002B85CF /* SKSplitView.h */,
+				46A17B11163A157A002B85CF /* SKSplitView.m */,
+				46198B72163B22AF004712F4 /* SKPlaylistController.h */,
+				46198B73163B22AF004712F4 /* SKPlaylistController.m */,
+				46325C16163E8923004F2129 /* SKSongTableController.h */,
+				46325C17163E8924004F2129 /* SKSongTableController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		4654CD1F1636472E00CADDB0 = {
 			isa = PBXGroup;
 			children = (
-				4654CD7C1636519500CADDB0 /* Security.framework */,
 				4654CD341636472E00CADDB0 /* Shack */,
 				4654CD541636472F00CADDB0 /* ShackTests */,
 				4654CD7816364D1100CADDB0 /* External */,
@@ -139,6 +167,8 @@
 		4654CD301636472E00CADDB0 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46325C20163F6FF9004F2129 /* AVFoundation.framework */,
+				4654CD7C1636519500CADDB0 /* Security.framework */,
 				4654CD311636472E00CADDB0 /* AppKit.framework */,
 				4654CD321636472E00CADDB0 /* CoreData.framework */,
 				4654CD331636472E00CADDB0 /* Foundation.framework */,
@@ -154,7 +184,7 @@
 				4654CD431636472E00CADDB0 /* MainMenu.xib */,
 				4654CD461636472E00CADDB0 /* Shack.xcdatamodeld */,
 				4654CD7116364B1E00CADDB0 /* README.md */,
-				46325C1A163EA2D9004F2129 /* TO_BE_FIXED */,
+				46325C1A163EA2D9004F2129 /* TO_BE_FIXED.md */,
 				4654CD351636472E00CADDB0 /* Supporting Files */,
 				4654CD681636482C00CADDB0 /* src */,
 			);
@@ -195,20 +225,17 @@
 		4654CD681636482C00CADDB0 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4654CD651636481F00CADDB0 /* SKController.h */,
-				4654CD661636481F00CADDB0 /* SKController.m */,
 				4654CD7916364D7600CADDB0 /* SKSocketController.h */,
 				4654CD7A16364D7600CADDB0 /* SKSocketController.m */,
-				46B06F061639EE0C00A93F52 /* SKSplitViewDelegate.h */,
-				46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */,
-				46A17B10163A157A002B85CF /* SKSplitView.h */,
-				46A17B11163A157A002B85CF /* SKSplitView.m */,
-				46198B72163B22AF004712F4 /* SKPlaylistController.h */,
-				46198B73163B22AF004712F4 /* SKPlaylistController.m */,
 				46198B76163B4D7D004712F4 /* SKBoolean.h */,
 				46198B77163B4D7D004712F4 /* SKBoolean.m */,
-				46325C16163E8923004F2129 /* SKSongTableController.h */,
-				46325C17163E8924004F2129 /* SKSongTableController.m */,
+				46325C23163F75E0004F2129 /* SKAudioPlayer.h */,
+				46325C24163F75E0004F2129 /* SKAudioPlayer.m */,
+				46325C26163F79F8004F2129 /* SKPlaylistManager.h */,
+				46325C27163F79F8004F2129 /* SKPlaylistManager.m */,
+				4691A20D1642276E00698DA3 /* SKXiamiLinkHandler.h */,
+				4691A20E1642276E00698DA3 /* SKXiamiLinkHandler.m */,
+				46325C29163F7A38004F2129 /* UI */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -308,7 +335,7 @@
 				4654CD3F1636472E00CADDB0 /* Credits.rtf in Resources */,
 				4654CD451636472E00CADDB0 /* MainMenu.xib in Resources */,
 				4654CD7216364B1E00CADDB0 /* README.md in Resources */,
-				46325C1B163EA2DA004F2129 /* TO_BE_FIXED in Resources */,
+				46325C1B163EA2DA004F2129 /* TO_BE_FIXED.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +381,9 @@
 				46198B74163B22AF004712F4 /* SKPlaylistController.m in Sources */,
 				46198B78163B4D7E004712F4 /* SKBoolean.m in Sources */,
 				46325C18163E8924004F2129 /* SKSongTableController.m in Sources */,
+				46325C25163F75E0004F2129 /* SKAudioPlayer.m in Sources */,
+				46325C28163F79F9004F2129 /* SKPlaylistManager.m in Sources */,
+				4691A20F1642276E00698DA3 /* SKXiamiLinkHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

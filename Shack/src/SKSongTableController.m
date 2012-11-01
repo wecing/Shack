@@ -7,9 +7,10 @@
 //
 
 #import "SKSongTableController.h"
+#import "SKPlaylistManager.h"
 
 @interface SKSongTableController ()
-@property NSMutableArray *tracksInfoDictArray;
+// @property NSMutableArray *tracksInfoDictArray;
 @property IBOutlet NSTableView *tableView;
 @end
 
@@ -23,7 +24,12 @@
     return singleton;
 }
 
++ (void)tableReloadData {
+    [[[self sharedInstance] tableView] reloadData];
+}
+
 // init is also singleton-ized.
+// FIXME: use dispatch_once to create the singleton, maybe?
 - (id)init {
     static id singleton = nil;
     if (singleton != nil) {
@@ -31,18 +37,7 @@
     }
     self = [super init];
     singleton = self;
-    if (self) {
-        [self setTracksInfoDictArray:[[NSMutableArray alloc] init]];
-    }
     return self;
-}
-
-- (void)appendSongs:(NSArray*)songsList {
-    NSMutableArray *tracks = [self tracksInfoDictArray];
-    for (NSDictionary *d in songsList) {
-        [tracks addObject:d];
-    }
-    [[self tableView] reloadData];
 }
 
 ////////////////////////////////////////////////
@@ -60,7 +55,8 @@
 ////////////////////////////////////////////////
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    NSArray *a = [self tracksInfoDictArray];
+    // NSArray *a = [self tracksInfoDictArray];
+    NSArray *a = [SKPlaylistManager playlist];
     if (a != nil) {
         return [a count];
     }
@@ -71,7 +67,7 @@
       objectValueForTableColumn:(NSTableColumn *)tableColumn
                             row:(NSInteger)rowIndex {
     NSString *columnIdentifier = [tableColumn identifier];
-    NSDictionary *d = [[self tracksInfoDictArray] objectAtIndex:rowIndex];
+    NSDictionary *d = [[SKPlaylistManager playlist] objectAtIndex:rowIndex];
     return [d objectForKey:columnIdentifier];
 }
 

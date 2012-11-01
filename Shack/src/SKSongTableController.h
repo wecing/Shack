@@ -10,5 +10,5 @@
 
 @interface SKSongTableController : NSObject <NSTableViewDataSource, NSTableViewDelegate>
 + (id)sharedInstance;
-- (void)appendSongs:(NSArray*)songsList;
++ (void)tableReloadData;
 @end

@@ -7,17 +7,23 @@
 //
 
 #import "SKController.h"
-#import "SKPlaylistController.h"
-
-@interface SKController ()
-@property (readwrite) IBOutlet NSTableHeaderView *songTableHeader;
-@property (readwrite) IBOutlet NSTableView *songTable;
-@end
+#import "SKAudioPlayer.h"
 
 @implementation SKController
 
-- (IBAction)problem:(id)sender {
-    NSLog(@"Problem?");
+// why do we need the "stop" button?
+
+// FIXME: disable play button when current playlist is empty?
+
+- (IBAction)togglePlayPause:(id)sender {
+    NSButton *button = [self playPauseButton];
+    if ([[button title] isEqualToString:@"Play"]) {
+        [button setTitle:@"Pause"];
+        [SKAudioPlayer play];
+    } else {
+        [button setTitle:@"Play"];
+        [SKAudioPlayer pause];
+    }
 }
 
 @end

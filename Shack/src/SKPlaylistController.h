@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-// Well, I used to call this class "SKPlaylistDataSourceAndDelegate",
-// but obviously the name is too long...
+// FIXME: rename the interface as SKSidePanelController.
 
 @interface SKPlaylistController : NSObject <NSOutlineViewDataSource, NSOutlineViewDelegate> {
 @private
