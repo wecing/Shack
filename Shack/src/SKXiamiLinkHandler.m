@@ -40,6 +40,10 @@ static NSMutableArray *connArray = nil;
     return self;
 }
 
+////////////////////////////////////////////////
+////////////// delegate methods ////////////////
+////////////////////////////////////////////////
+
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection
                   willCacheResponse:(NSCachedURLResponse *)cachedResponse {
     return nil;
@@ -80,6 +84,10 @@ static NSMutableArray *connArray = nil;
         [connArray removeObject:connection];
     }
 }
+
+////////////////////////////////////////////////
+/////////////////// THE CORE ///////////////////
+////////////////////////////////////////////////
 
 + (NSArray *)decodeXML:(NSData *)xmlData {
     // NSXMLDocument *xmlDoc = [[NSXMLDocument alloc] initWithContentsOfURL:infoURL options:0 error:&error];

@@ -8,13 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+// SKXiamiLinkHander: handle the link fetched from socket.
+//
+// the delegate method, connectionDidFinishLoading, will decode the `location`
+// we get from xiami, store all info we need into an array of dicts, and finally
+// ask SKPlaylistManager to update the current playlist.
+//
+// (then SKPlaylistManager will update the UI.)
+
 @interface SKXiamiLinkHandler : NSObject <NSURLConnectionDelegate> {
 @private
     NSMutableData *fullData;
-    // NSURLConnection *connection;
 }
 
 + (BOOL)feedLink:(NSString *)link;
+
+////////////////////////////////////////////////
+////////////// delegate methods ////////////////
+////////////////////////////////////////////////
 
 // cache? I will not use that.
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection
