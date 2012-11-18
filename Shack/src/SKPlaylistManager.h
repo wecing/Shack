@@ -31,4 +31,6 @@
 // return the playlist identified by <name>.
 + (NSArray *)playlist:(NSString *)name;
 
++ (NSString *)currentPlaylistName;
+
 @end

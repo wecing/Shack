@@ -62,4 +62,8 @@ static NSString *currentPlaylist = @"default";
     return playlist;
 }
 
++ (NSString *)currentPlaylistName {
+    return currentPlaylist;
+}
+
 @end

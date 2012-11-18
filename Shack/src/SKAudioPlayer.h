@@ -7,15 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AVFoundation/AVFoundation.h>
+// #import <AVFoundation/AVFoundation.h>
 
-@interface SKAudioPlayer : NSObject <AVAudioPlayerDelegate>
+@interface SKAudioPlayer : NSObject
 
-// play the "next" song in playlist.
-// initially, or when SKAudioPlayer is reset, the current song index is -1.
 + (void)play;
-// + (void)playSongAtIndex:(int)index;
 + (void)pause;
+
++ (void)startPlayingSongAtIndex:(NSInteger)idx;
 
 // singleton is for the delegate only.
 + (id)sharedInstance;

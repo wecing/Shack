@@ -8,50 +8,37 @@
 
 #import "SKAudioPlayer.h"
 #import "SKPlaylistManager.h"
+#import "WKAudioStreamer.h"
 
-static int songIndex = -1;
-static AVAudioPlayer *audioPlayer = nil;
+// stream no more than 3 locations at the same time.
+#define MAX_PARALLEL_STREAMED 3
+
+@interface SKAudioPlayer () <WKAudioStreamerDelegate>
+@end
+
+// map location to WKAudioStreamer instances.
+static NSMutableDictionary *streamer_dict = nil;
+static WKAudioStreamer *streamer = nil;
+static NSMutableArray *cur_streamed_locs = nil;
 
 @implementation SKAudioPlayer
 
-// FIXME: songIndex keeps track of the song we are currently playing.
-//
-//        when the user deletes songs, we check if the playing song is to be deleted.
-//        if so, we will just stop playing and reset audioPlayer and songIndex.
++ (void)initialize {
+    streamer_dict = [NSMutableDictionary new];
+    cur_streamed_locs = [NSMutableArray new];
+}
 
 + (void)play {
-    if (audioPlayer != nil) {
-        BOOL success = [audioPlayer play];
-        if (!success) {
-            NSLog(@"failed to start playing song %d", songIndex);
-            NSLog(@"AVAudioPlayer object: %@", audioPlayer);
-        }
+    if (streamer == nil && [[SKPlaylistManager playlist] count] > 0) {
+        [self startPlayingSongAtIndex:0];
     } else {
-        NSArray *list = [SKPlaylistManager playlist];
-        if ([list count] != 0) {
-            // FIXME: make cycling optional.
-            songIndex = (songIndex + 1) % [list count];
-            
-            NSError *error = nil;
-            // NSDictionary *d = [list objectAtIndex:songIndex];
-            // NSURL *url = [NSURL URLWithString:[d objectForKey:@"location"]];
-            NSURL *url = [NSURL fileURLWithPath:@"/Users/wecing/Music/everything else/Amiina/Puzzle/03 What are we Waiting for?.mp3"];
-            audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-            
-            [audioPlayer setDelegate:[self sharedInstance]];
-            
-            if (error != nil) {
-                NSLog(@"Error: %@", error);
-            } else {
-                [audioPlayer play];
-            }
-        }
+        [streamer play];
     }
 }
 
 + (void)pause {
-    if (audioPlayer != nil) {
-        [audioPlayer pause];
+    if (streamer != nil) {
+        [streamer pause];
     }
 }
 
@@ -64,14 +51,78 @@ static AVAudioPlayer *audioPlayer = nil;
     return shared;
 }
 
-- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
-    if (flag) {
-        audioPlayer = nil; // phew!
-        // we will advance songIndex by 1 in play.
-        [SKAudioPlayer play];
-    } else {
-        NSLog(@"failed to play audio: player=%@", player);
+// force re-streaming songs iff the song requested is exactly the currently playing one.
++ (void)startPlayingSongAtIndex:(NSInteger)idx {
+    NSLog(@"\n-> startPlayingSongAtIndex:%ld called", idx);
+    
+    NSArray *song_list = [SKPlaylistManager playlist];
+    if (idx >= [song_list count]) {
+        return;
     }
+    
+    NSLog(@"Hi? 1");
+    
+    NSString *loc = [(NSDictionary *)[song_list objectAtIndex:idx] objectForKey:@"location"];
+    
+    // FIXME: add stop to WKAudioStreamer!!!!!!!!!!!!!!!!!!!!!!
+    
+    if (streamer == nil) {
+        NSLog(@"Hi? 2");
+        // no active streamer
+        streamer = [WKAudioStreamer streamerWithURLString:loc delegate:[self sharedInstance]];
+        [streamer_dict setObject:streamer forKey:loc];
+        [cur_streamed_locs addObject:loc];
+        [streamer play];
+    } else if ([[streamer requestedURL] isEqualToString:loc]) {
+        NSLog(@"Hi? 3");
+        // exactly the currently playing one, re-stream
+        [streamer pause];
+        streamer = [WKAudioStreamer streamerWithURLString:loc delegate:[self sharedInstance]];
+        [streamer_dict setObject:streamer forKey:loc];
+        [streamer play];
+    } else {
+        NSLog(@"Hi? 4");
+        // the requested url is not the same as the currently playing one (streamer != nil)
+        [streamer pause];
+        streamer = [streamer_dict objectForKey:loc];
+        
+        // FIXME: hmm... maybe it's too rude.
+        //        it will only keep the streamer wanted.
+        [streamer_dict removeAllObjects];
+        [cur_streamed_locs removeAllObjects];
+        
+        if (streamer == nil) {
+            // loc is not already streamed
+            streamer = [WKAudioStreamer streamerWithURLString:loc delegate:[self sharedInstance]];
+        }
+        [streamer_dict setObject:streamer forKey:loc];
+        [cur_streamed_locs addObject:loc];
+        
+        [streamer play];
+    }
+}
+
+- (void)onStreamingFinished:(WKAudioStreamer *)_streamer {
+    @synchronized(self) {
+        NSLog(@"\n-> streaming finished.");
+    }
+}
+
+- (void)onPlayingFinished:(WKAudioStreamer *)_streamer {
+    @synchronized(self) {
+        NSLog(@"\n-> playing finished.");
+    }
+}
+
+- (void)onDataReceived:(WKAudioStreamer *)_streamer
+                  data:(NSData *)newData {
+    @synchronized(self) {
+    }
+}
+
+- (void)onErrorOccured:(WKAudioStreamer *)_streamer
+                 error:(NSError *)error {
+    NSLog(@"\n-> Error occured! %@", error);
 }
 
 @end

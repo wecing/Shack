@@ -11,6 +11,11 @@
 
 @implementation SKController
 
+- (void)awakeFromNib {
+    [[self songTable] setTarget:self];
+    [[self songTable] setDoubleAction:@selector(doubleClickSongItem:)];
+}
+
 // why do we need the "stop" button?
 
 // FIXME: disable play button when current playlist is empty?
@@ -24,6 +29,13 @@
         [button setTitle:@"Play"];
         [SKAudioPlayer pause];
     }
+}
+
+- (void)doubleClickSongItem:(id)sender {
+    NSInteger clickedRowNumber = [[self songTable] clickedRow];
+    NSLog(@"\n-> clicked row: %ld\n", clickedRowNumber);
+    
+    [SKAudioPlayer startPlayingSongAtIndex:clickedRowNumber];
 }
 
 @end
