@@ -19,6 +19,8 @@ static NSMutableArray *connArray = nil;
 }
 
 + (BOOL)feedLink:(NSString *)link {
+    // link example:
+    //     http://www.xiami.com/song/playlist/id/372166/object_name/default/object_id/0
     NSURL *url = [NSURL URLWithString:link];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLConnection *conn = [NSURLConnection connectionWithRequest:request delegate:[self new]];
