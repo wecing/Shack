@@ -27,6 +27,7 @@
             shackActive = true;
             t.innerHTML = 'on';
         }
+        GM_setValue('shackActive', shackActive);
     }
 
     $(document).ready(function() {
@@ -69,6 +70,18 @@
                 xiamiAddSongs(x);
             }
         };
+
+        // well, the first time we run the script,
+        // shackActive is not in GM's storage;
+        // so it will return undefined.
+        var _active = GM_getValue('shackActive');
+        if (_active == undefined) {
+            _active = true;
+        }
+
+        if (!_active) {
+            toggleShackAdapter();
+        }
 
         unsafeWindow.bar = adapter_controller;
     });
