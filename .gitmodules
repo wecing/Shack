@@ -1,0 +1,3 @@
+[submodule "external/WKAudioStreamer"]
+	path = external/WKAudioStreamer
+	url = git@github.com:wecing/WKAudioStreamer.git
