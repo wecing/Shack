@@ -33,6 +33,7 @@
 		4691A20F1642276E00698DA3 /* SKXiamiLinkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4691A20E1642276E00698DA3 /* SKXiamiLinkHandler.m */; };
 		46A17B12163A157A002B85CF /* SKSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A17B11163A157A002B85CF /* SKSplitView.m */; };
 		46B06F081639EE0C00A93F52 /* SKSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */; };
+		46B21CDA1662D47900020AD4 /* akashi_head.icns in Resources */ = {isa = PBXBuildFile; fileRef = 46B21CD91662D47900020AD4 /* akashi_head.icns */; };
 		46BAD3AC165F25CA005CB014 /* WKAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAD3AB165F25CA005CB014 /* WKAudioStreamer.m */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		46A17B11163A157A002B85CF /* SKSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSplitView.m; path = src/SKSplitView.m; sourceTree = "<group>"; };
 		46B06F061639EE0C00A93F52 /* SKSplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSplitViewDelegate.h; path = src/SKSplitViewDelegate.h; sourceTree = "<group>"; };
 		46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSplitViewDelegate.m; path = src/SKSplitViewDelegate.m; sourceTree = "<group>"; };
+		46B21CD91662D47900020AD4 /* akashi_head.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = akashi_head.icns; path = ../akashi_head.icns; sourceTree = "<group>"; };
 		46BAD3AA165F25CA005CB014 /* WKAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKAudioStreamer.h; path = external/WKAudioStreamer/WKAudioStreamer.h; sourceTree = SOURCE_ROOT; };
 		46BAD3AB165F25CA005CB014 /* WKAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKAudioStreamer.m; path = external/WKAudioStreamer/WKAudioStreamer.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -141,7 +143,6 @@
 		4654CD1F1636472E00CADDB0 = {
 			isa = PBXGroup;
 			children = (
-				4669A71116587E7D004A075B /* AudioToolbox.framework */,
 				4654CD341636472E00CADDB0 /* Shack */,
 				4654CD541636472F00CADDB0 /* ShackTests */,
 				4654CD7816364D1100CADDB0 /* External */,
@@ -162,6 +163,7 @@
 		4654CD2D1636472E00CADDB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4669A71116587E7D004A075B /* AudioToolbox.framework */,
 				4654CD2E1636472E00CADDB0 /* Cocoa.framework */,
 				4654CD4F1636472F00CADDB0 /* SenTestingKit.framework */,
 				4654CD301636472E00CADDB0 /* Other Frameworks */,
@@ -187,6 +189,7 @@
 				4654CD401636472E00CADDB0 /* SKAppDelegate.h */,
 				4654CD411636472E00CADDB0 /* SKAppDelegate.m */,
 				4654CD431636472E00CADDB0 /* MainMenu.xib */,
+				46B21CD91662D47900020AD4 /* akashi_head.icns */,
 				4654CD461636472E00CADDB0 /* Shack.xcdatamodeld */,
 				4654CD7116364B1E00CADDB0 /* README.md */,
 				46325C1A163EA2D9004F2129 /* TO_BE_FIXED.md */,
@@ -351,6 +354,7 @@
 				4654CD451636472E00CADDB0 /* MainMenu.xib in Resources */,
 				4654CD7216364B1E00CADDB0 /* README.md in Resources */,
 				46325C1B163EA2DA004F2129 /* TO_BE_FIXED.md in Resources */,
+				46B21CDA1662D47900020AD4 /* akashi_head.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
