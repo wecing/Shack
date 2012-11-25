@@ -11,6 +11,9 @@
 
 @interface SKAudioPlayer : NSObject
 
+@property IBOutlet NSTextField *progressLabel;
+@property IBOutlet NSTableView *songTable;
+
 + (void)play;
 + (void)pause;
 

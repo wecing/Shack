@@ -10,22 +10,24 @@
 #import "SKPlaylistManager.h"
 #import "WKAudioStreamer.h"
 
-// stream no more than 3 locations at the same time.
-#define MAX_PARALLEL_STREAMED 3
+// save data of no more than 3 songs at once.
+#define MAX_SONGS_SAVED 3
 
 @interface SKAudioPlayer () <WKAudioStreamerDelegate>
 @end
 
 // map location to WKAudioStreamer instances.
 static NSMutableDictionary *streamer_dict = nil;
+// static NSMutableArray *cur_streamed_locs = nil;
 static WKAudioStreamer *streamer = nil;
-static NSMutableArray *cur_streamed_locs = nil;
+// static int cur_idx = -1;
+// static NSString *cur_loc = nil;
 
 @implementation SKAudioPlayer
 
 + (void)initialize {
     streamer_dict = [NSMutableDictionary new];
-    cur_streamed_locs = [NSMutableArray new];
+    // cur_streamed_locs = [NSMutableArray new];
 }
 
 + (void)play {
@@ -43,10 +45,22 @@ static NSMutableArray *cur_streamed_locs = nil;
 }
 
 + (id)sharedInstance {
+    // it returns exactly the same singleton object which init returns.
     static dispatch_once_t pred;
     static id shared = nil;
     dispatch_once(&pred, ^{
         shared = [[self alloc] init];
+    });
+    return shared;
+}
+
+- (id)init {
+    self = [super init];
+    
+    static dispatch_once_t pred;
+    static id shared = nil;
+    dispatch_once(&pred, ^{
+        shared = self;
     });
     return shared;
 }
@@ -60,58 +74,103 @@ static NSMutableArray *cur_streamed_locs = nil;
         return;
     }
     
-    NSLog(@"Hi? 1");
-    
     NSString *loc = [(NSDictionary *)[song_list objectAtIndex:idx] objectForKey:@"location"];
     
-    // FIXME: add stop to WKAudioStreamer!!!!!!!!!!!!!!!!!!!!!!
-    
     if (streamer == nil) {
-        NSLog(@"Hi? 2");
+        NSLog(@"Hi? 2"); // DEBUG
         // no active streamer
         streamer = [WKAudioStreamer streamerWithURLString:loc delegate:[self sharedInstance]];
         [streamer_dict setObject:streamer forKey:loc];
-        [cur_streamed_locs addObject:loc];
+        // cur_loc = loc;
         [streamer play];
     } else if ([[streamer requestedURL] isEqualToString:loc]) {
-        NSLog(@"Hi? 3");
-        // exactly the currently playing one, re-stream
-        [streamer pause];
-        streamer = [WKAudioStreamer streamerWithURLString:loc delegate:[self sharedInstance]];
-        [streamer_dict setObject:streamer forKey:loc];
+        NSLog(@"Hi? 3"); // DEBUG
+        // exactly the currently playing one
+        [streamer restartStreaming]; // re-stream!
         [streamer play];
     } else {
-        NSLog(@"Hi? 4");
+        NSLog(@"Hi? 4"); // DEBUG
+        
         // the requested url is not the same as the currently playing one (streamer != nil)
+        
         [streamer pause];
+        [streamer pauseStreaming];
+        
+        streamer_dict = [self buildStreamerDict:(int)idx songList:song_list];
+        [[[self sharedInstance] songTable] selectRowIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
+        
         streamer = [streamer_dict objectForKey:loc];
-        
-        // FIXME: hmm... maybe it's too rude.
-        //        it will only keep the streamer wanted.
-        [streamer_dict removeAllObjects];
-        [cur_streamed_locs removeAllObjects];
-        
-        if (streamer == nil) {
-            // loc is not already streamed
-            streamer = [WKAudioStreamer streamerWithURLString:loc delegate:[self sharedInstance]];
-        }
-        [streamer_dict setObject:streamer forKey:loc];
-        [cur_streamed_locs addObject:loc];
-        
         [streamer play];
     }
 }
 
 - (void)onStreamingFinished:(WKAudioStreamer *)_streamer {
     @synchronized(self) {
-        NSLog(@"\n-> streaming finished.");
+        NSLog(@"\n-> streaming finished."); // DEBUG
+        
+        NSArray *song_list = [SKPlaylistManager playlist];
+        // int idx = [SKAudioPlayer findIdxInSongList:[_streamer requestedURL] songList:song_list];
+        int idx = [SKAudioPlayer findLoc:[streamer requestedURL] inSongList:song_list];
+        streamer_dict = [SKAudioPlayer buildStreamerDict:idx songList:song_list];
     }
 }
 
 - (void)onPlayingFinished:(WKAudioStreamer *)_streamer {
     @synchronized(self) {
-        NSLog(@"\n-> playing finished.");
+        NSLog(@"\n-> playing finished."); // DEBUG
+        
+        NSArray *song_list = [SKPlaylistManager playlist];
+        // int idx = [SKAudioPlayer findIdxInSongList:[_streamer requestedURL] songList:song_list];
+        int idx = [SKAudioPlayer findLoc:[_streamer requestedURL] inSongList:song_list];
+        idx = (idx + 1) % [song_list count];
+        [SKAudioPlayer startPlayingSongAtIndex:idx];
+        /*
+        NSLog(@"\n-> new idx: %d", idx); // DEBUG
+        NSString *next_url = [(NSDictionary *)[song_list objectAtIndex:idx] objectForKey:@"location"];
+        streamer_dict = [SKAudioPlayer buildStreamerDict:idx songList:song_list];
+        
+        [streamer pause]; // is it possible that streamer != _streamer?
+        streamer = [streamer_dict objectForKey:next_url];
+        NSLog(@"%@", streamer); // DEBUG
+        [streamer play];
+        NSLog(@"hmm..."); // DEBUG
+         */
     }
+}
+
+// + (int)findIdxInSongList:(NSString *)loc songList:(NSArray *)song_list {
++ (int)findLoc:(NSString *)loc inSongList:(NSArray *)song_list {
+    int i = -1;
+    for (NSDictionary *d in song_list) {
+        i++;
+        if ([loc isEqualToString:[d objectForKey:@"location"]]) {
+            return i;
+        }
+    }
+    return -1;
+}
+
++ (NSMutableDictionary *)buildStreamerDict:(int)idx songList:(NSArray *)song_list {
+    NSMutableDictionary *td = [NSMutableDictionary new];
+    BOOL found_not_finished = NO;
+    int t = (int)[song_list count];
+    if (MAX_SONGS_SAVED < t) {
+        t = MAX_SONGS_SAVED;
+    }
+    for (int i = 0; i < t; i++) {
+        NSDictionary *d = [song_list objectAtIndex:((idx+i) % [song_list count])];
+        NSString *url = [d objectForKey:@"location"];
+        WKAudioStreamer *st = [streamer_dict objectForKey:url];
+        if (st == nil) {
+            st = [WKAudioStreamer streamerWithURLString:url delegate:[self sharedInstance]];
+        }
+        if (![st streamingFinished] && !found_not_finished) {
+            [st startStreaming];
+            found_not_finished = YES;
+        }
+        [td setObject:st forKey:url];
+    }
+    return td;
 }
 
 - (void)onDataReceived:(WKAudioStreamer *)_streamer
@@ -122,7 +181,34 @@ static NSMutableArray *cur_streamed_locs = nil;
 
 - (void)onErrorOccured:(WKAudioStreamer *)_streamer
                  error:(NSError *)error {
+    // FIXME: next? restream?
     NSLog(@"\n-> Error occured! %@", error);
+}
+
+- (void)onPlayerPosChanged:(WKAudioStreamer *)_streamer
+                       pos:(double)pos {
+    if (_streamer != streamer) {
+        return;
+    }
+    
+    NSTextField *progress_label = [self progressLabel];
+    
+    NSString *(^pos2str)(int) = ^(int pos) {
+        if (pos < 60) { // 0:59
+            if (pos < 0) { pos = 0; }
+            return [NSString stringWithFormat:@"0:%02d", pos];
+        } else if (pos < 3600) { // 1:18, 13:07
+            return [NSString stringWithFormat:@"%d:%02d", pos/60, pos%60];
+        } else { // 35:01:17
+            return [NSString stringWithFormat:@"%d:%02d:%02d", pos/3600, (pos%3600)/60, pos%60];
+        }
+    };
+    
+    NSString *progress_str = [NSString stringWithFormat:@"%@ / %@",
+                              pos2str((int)pos),
+                              pos2str((int)[streamer duration])];
+    
+    [progress_label setStringValue:progress_str];
 }
 
 @end
