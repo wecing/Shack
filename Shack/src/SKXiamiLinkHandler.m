@@ -8,6 +8,7 @@
 
 #import "SKXiamiLinkHandler.h"
 #import "SKPlaylistManager.h"
+#import "SKController.h"
 
 // to avoid NSURLConnection objects are released once feedLink finished execution...
 static NSMutableArray *connArray = nil;
@@ -19,6 +20,8 @@ static NSMutableArray *connArray = nil;
 }
 
 + (BOOL)feedLink:(NSString *)link {
+    [SKController busy];
+    
     // link example:
     //     http://www.xiami.com/song/playlist/id/372166/object_name/default/object_id/0
     NSURL *url = [NSURL URLWithString:link];
@@ -31,6 +34,7 @@ static NSMutableArray *connArray = nil;
         return YES;
     } else {
         return NO;
+        [SKController busyDone];
     }
 }
 
@@ -259,6 +263,7 @@ static NSMutableArray *connArray = nil;
     // for now... just print it out.
     // NSLog(@"%@", tracksInfoDictArray);
     
+    [SKController busyDone];
     return tracksInfoDictArray;
 }
 

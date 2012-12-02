@@ -9,6 +9,7 @@
 #import "SKAudioPlayer.h"
 #import "SKPlaylistManager.h"
 #import "WKAudioStreamer.h"
+#import "SKController.h"
 
 // save data of no more than 3 songs at once.
 #define MAX_SONGS_SAVED 3
@@ -101,7 +102,15 @@ static WKAudioStreamer *streamer = nil;
         streamer_dict = [self buildStreamerDict:(int)idx songList:song_list];
         [[[self sharedInstance] songTable] selectRowIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
         
+        BOOL old_streamer_blocked = [streamer isPlayerBlocking];
         streamer = [streamer_dict objectForKey:loc];
+        
+        if (old_streamer_blocked) {
+            [SKController busyDone];
+        }
+        if ([streamer isPlayerBlocking]) {
+            [SKController busy];
+        }
         return [streamer play];
     }
 }
@@ -211,6 +220,18 @@ static WKAudioStreamer *streamer = nil;
                               pos2str((int)[streamer duration])];
     
     [progress_label setStringValue:progress_str];
+}
+
+- (void)onPlayerBlocked:(WKAudioStreamer *)_streamer {
+    if (_streamer == streamer) {
+        [SKController busy];
+    }
+}
+
+- (void)onPlayerBlockingEnded:(WKAudioStreamer *)_streamer {
+    if (_streamer == streamer) {
+        [SKController busyDone];
+    }
 }
 
 @end

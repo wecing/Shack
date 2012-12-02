@@ -12,11 +12,19 @@
 
 @property IBOutlet NSTableHeaderView *songTableHeader;
 @property IBOutlet NSTableView *songTable;
+@property IBOutlet NSProgressIndicator *busyIndicator;
 
 @property IBOutlet NSButton *playPauseButton;
+
+// + (id)sharedInstance;
 
 - (IBAction)togglePlayPause:(id)sender;
 
 - (void)doubleClickSongItem:(id)sender;
+
+// toggle animation of the progress bar...
+// I'm terribly bad on naming variables.
++ (void)busy;
++ (void)busyDone;
 
 @end
