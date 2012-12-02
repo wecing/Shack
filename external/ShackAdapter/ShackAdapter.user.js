@@ -44,7 +44,7 @@
         t.style.width = '70px';
         t.style.height = '35px';
         t.style.position = 'absolute';
-        t.style.zIndex = 999999;
+        t.style.zIndex = 8; // for xiami's notification popup menu
         t.style.right = '0px';
         t.style.top = '100px';
         t.innerHTML = "<p align='center'>" +

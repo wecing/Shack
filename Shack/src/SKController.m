@@ -35,7 +35,12 @@
     NSInteger clickedRowNumber = [[self songTable] clickedRow];
     NSLog(@"\n-> clicked row: %ld\n", clickedRowNumber);
     
-    [SKAudioPlayer startPlayingSongAtIndex:clickedRowNumber];
+    NSButton *button = [self playPauseButton];
+    if ([SKAudioPlayer startPlayingSongAtIndex:clickedRowNumber]) {
+        [button setTitle:@"Pause"];
+    } else {
+        [button setTitle:@"Play"];
+    }
 }
 
 @end

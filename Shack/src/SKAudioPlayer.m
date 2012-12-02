@@ -30,17 +30,19 @@ static WKAudioStreamer *streamer = nil;
     // cur_streamed_locs = [NSMutableArray new];
 }
 
-+ (void)play {
++ (BOOL)play {
     if (streamer == nil && [[SKPlaylistManager playlist] count] > 0) {
-        [self startPlayingSongAtIndex:0];
+        return [self startPlayingSongAtIndex:0];
     } else {
-        [streamer play];
+        return [streamer play];
     }
 }
 
-+ (void)pause {
++ (BOOL)pause {
     if (streamer != nil) {
-        [streamer pause];
+        return [streamer pause];
+    } else {
+        return NO;
     }
 }
 
@@ -66,12 +68,12 @@ static WKAudioStreamer *streamer = nil;
 }
 
 // force re-streaming songs iff the song requested is exactly the currently playing one.
-+ (void)startPlayingSongAtIndex:(NSInteger)idx {
++ (BOOL)startPlayingSongAtIndex:(NSInteger)idx {
     NSLog(@"\n-> startPlayingSongAtIndex:%ld called", idx);
     
     NSArray *song_list = [SKPlaylistManager playlist];
     if (idx >= [song_list count]) {
-        return;
+        return NO;
     }
     
     NSString *loc = [(NSDictionary *)[song_list objectAtIndex:idx] objectForKey:@"location"];
@@ -82,12 +84,12 @@ static WKAudioStreamer *streamer = nil;
         streamer = [WKAudioStreamer streamerWithURLString:loc delegate:[self sharedInstance]];
         [streamer_dict setObject:streamer forKey:loc];
         // cur_loc = loc;
-        [streamer play];
+        return [streamer play];
     } else if ([[streamer requestedURL] isEqualToString:loc]) {
         NSLog(@"Hi? 3"); // DEBUG
         // exactly the currently playing one
         [streamer restartStreaming]; // re-stream!
-        [streamer play];
+        return [streamer play];
     } else {
         NSLog(@"Hi? 4"); // DEBUG
         
@@ -100,7 +102,7 @@ static WKAudioStreamer *streamer = nil;
         [[[self sharedInstance] songTable] selectRowIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
         
         streamer = [streamer_dict objectForKey:loc];
-        [streamer play];
+        return [streamer play];
     }
 }
 

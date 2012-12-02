@@ -14,10 +14,10 @@
 @property IBOutlet NSTextField *progressLabel;
 @property IBOutlet NSTableView *songTable;
 
-+ (void)play;
-+ (void)pause;
++ (BOOL)play;
++ (BOOL)pause;
 
-+ (void)startPlayingSongAtIndex:(NSInteger)idx;
++ (BOOL)startPlayingSongAtIndex:(NSInteger)idx;
 
 // singleton is for the delegate only.
 + (id)sharedInstance;
