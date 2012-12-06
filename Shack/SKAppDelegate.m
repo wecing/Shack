@@ -9,8 +9,13 @@
 #import "SKAppDelegate.h"
 #import "SKSocketController.h"
 #import "SKPlaylistController.h"
+#import "SKController.h"
 
-@interface SKAppDelegate ()
+
+@interface SKAppDelegate () {
+@private
+    SPMediaKeyTap *keyTap;
+}
 @property IBOutlet SKSplitView *splitView;
 @end
 
@@ -20,13 +25,65 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
 
++ (void)initialize;
+{
+	if([self class] != [SKAppDelegate class]) return;
+    
+	// Register defaults for the whitelist of apps that want to use media keys
+	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                             [SPMediaKeyTap defaultMediaKeyUserBundleIdentifiers], kMediaKeyUsingBundleIdentifiersDefaultsKey,
+                                                             nil]];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    keyTap = [[SPMediaKeyTap alloc] initWithDelegate:self];
+	if([SPMediaKeyTap usesGlobalMediaKeyTap]) {
+		[keyTap startWatchingMediaKeys];
+	} else {
+		NSLog(@"\n-> Media key monitoring disabled");
+    }
+    
     // Insert code here to initialize your application
     [SKSocketController listenToSocket];
     // [[self splitView] setPosition:160.0 ofDividerAtIndex:0];
     [[self splitView] setPosition:0 ofDividerAtIndex:0]; // hide it, at least for now...
     [[SKPlaylistController sharedInstance] expandNodes];
+}
+
+- (void)mediaKeyTap:(SPMediaKeyTap*)keyTap receivedMediaKeyEvent:(NSEvent*)event {
+    NSAssert([event type] == NSSystemDefined && [event subtype] == SPSystemDefinedEventMediaKeys,
+             @"Unexpected NSEvent in mediaKeyTap:receivedMediaKeyEvent:");
+	// here be dragons...
+	int keyCode = (([event data1] & 0xFFFF0000) >> 16);
+	int keyFlags = ([event data1] & 0x0000FFFF);
+	BOOL keyIsPressed = (((keyFlags & 0xFF00) >> 8)) == 0xA;
+	// int keyRepeat = (keyFlags & 0x1);
+    
+	if (keyIsPressed) {
+		// NSString *debugString = [NSString stringWithFormat:@"%@", keyRepeat?@", repeated.":@"."];
+		switch (keyCode) {
+			case NX_KEYTYPE_PLAY:
+				// debugString = [@"Play/pause pressed" stringByAppendingString:debugString];
+                // NSLog(@"\n-> *** play clicked ***");
+                [[SKController sharedInstance] togglePlayPause:self];
+				break;
+                
+			case NX_KEYTYPE_FAST:
+				// debugString = [@"Ffwd pressed" stringByAppendingString:debugString];
+                NSLog(@"\n-> *** fast forward pressed ***");
+				break;
+                
+			case NX_KEYTYPE_REWIND:
+				// debugString = [@"Rewind pressed" stringByAppendingString:debugString];
+                NSLog(@"\n-> *** rewind pressed ***");
+				break;
+			// default:
+			// 	   debugString = [NSString stringWithFormat:@"Key %d pressed%@", keyCode, debugString];
+			//     break;
+            //     // More cases defined in hidsystem/ev_keymap.h
+		}
+	}
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "org.wecing.Shack" in the user's Application Support directory.

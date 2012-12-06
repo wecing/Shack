@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "SKSplitView.h"
 
+#import "SPMediaKeyTap.h"
+
 @interface SKAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
@@ -18,5 +20,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)saveAction:(id)sender;
+
+- (void)mediaKeyTap:(SPMediaKeyTap*)keyTap receivedMediaKeyEvent:(NSEvent*)event;
 
 @end

@@ -16,7 +16,7 @@
 
 @property IBOutlet NSButton *playPauseButton;
 
-// + (id)sharedInstance;
++ (id)sharedInstance;
 
 - (IBAction)togglePlayPause:(id)sender;
 

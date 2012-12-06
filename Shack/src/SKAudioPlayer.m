@@ -77,6 +77,9 @@ static WKAudioStreamer *streamer = nil;
         return NO;
     }
     
+    // select the idx-th item.
+    [[[self sharedInstance] songTable] selectRowIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
+    
     NSString *loc = [(NSDictionary *)[song_list objectAtIndex:idx] objectForKey:@"location"];
     
     if (streamer == nil) {
@@ -100,7 +103,6 @@ static WKAudioStreamer *streamer = nil;
         [streamer pauseStreaming];
         
         streamer_dict = [self buildStreamerDict:(int)idx songList:song_list];
-        [[[self sharedInstance] songTable] selectRowIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
         
         BOOL old_streamer_blocked = [streamer isPlayerBlocking];
         streamer = [streamer_dict objectForKey:loc];

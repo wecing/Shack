@@ -31,6 +31,11 @@
 		4654CD7D1636519500CADDB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD7C1636519500CADDB0 /* Security.framework */; };
 		4669A71216587E7D004A075B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4669A71116587E7D004A075B /* AudioToolbox.framework */; };
 		4691A20F1642276E00698DA3 /* SKXiamiLinkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4691A20E1642276E00698DA3 /* SKXiamiLinkHandler.m */; };
+		4699406216703A9A00FD8FAD /* SKApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699406116703A9A00FD8FAD /* SKApplication.m */; };
+		4699406516703B0A00FD8FAD /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4699406416703B0A00FD8FAD /* IOKit.framework */; };
+		4699407916704AFD00FD8FAD /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4699407816704AFD00FD8FAD /* Carbon.framework */; };
+		4699409C167052BB00FD8FAD /* SPMediaKeyTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699409B167052BB00FD8FAD /* SPMediaKeyTap.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		469940A71670533600FD8FAD /* NSObject+SPInvocationGrabbing.m in Sources */ = {isa = PBXBuildFile; fileRef = 469940A31670533600FD8FAD /* NSObject+SPInvocationGrabbing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		46A17B12163A157A002B85CF /* SKSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A17B11163A157A002B85CF /* SKSplitView.m */; };
 		46B06F081639EE0C00A93F52 /* SKSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */; };
 		46BAD3AC165F25CA005CB014 /* WKAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAD3AB165F25CA005CB014 /* WKAudioStreamer.m */; };
@@ -91,6 +96,14 @@
 		4669A71116587E7D004A075B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4691A20D1642276E00698DA3 /* SKXiamiLinkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKXiamiLinkHandler.h; path = src/SKXiamiLinkHandler.h; sourceTree = "<group>"; };
 		4691A20E1642276E00698DA3 /* SKXiamiLinkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKXiamiLinkHandler.m; path = src/SKXiamiLinkHandler.m; sourceTree = "<group>"; };
+		4699406016703A9A00FD8FAD /* SKApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKApplication.h; path = src/SKApplication.h; sourceTree = "<group>"; };
+		4699406116703A9A00FD8FAD /* SKApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKApplication.m; path = src/SKApplication.m; sourceTree = "<group>"; };
+		4699406416703B0A00FD8FAD /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		4699407816704AFD00FD8FAD /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		4699409A167052BB00FD8FAD /* SPMediaKeyTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMediaKeyTap.h; path = external/SPMediaKeyTap/SPMediaKeyTap.h; sourceTree = SOURCE_ROOT; };
+		4699409B167052BB00FD8FAD /* SPMediaKeyTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMediaKeyTap.m; path = external/SPMediaKeyTap/SPMediaKeyTap.m; sourceTree = SOURCE_ROOT; };
+		469940A21670533600FD8FAD /* NSObject+SPInvocationGrabbing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SPInvocationGrabbing.h"; sourceTree = "<group>"; };
+		469940A31670533600FD8FAD /* NSObject+SPInvocationGrabbing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SPInvocationGrabbing.m"; sourceTree = "<group>"; };
 		46A17B10163A157A002B85CF /* SKSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSplitView.h; path = src/SKSplitView.h; sourceTree = "<group>"; };
 		46A17B11163A157A002B85CF /* SKSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSplitView.m; path = src/SKSplitView.m; sourceTree = "<group>"; };
 		46B06F061639EE0C00A93F52 /* SKSplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSplitViewDelegate.h; path = src/SKSplitViewDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4699407916704AFD00FD8FAD /* Carbon.framework in Frameworks */,
+				4699406516703B0A00FD8FAD /* IOKit.framework in Frameworks */,
 				4669A71216587E7D004A075B /* AudioToolbox.framework in Frameworks */,
 				4654CD7D1636519500CADDB0 /* Security.framework in Frameworks */,
 				4654CD2F1636472E00CADDB0 /* Cocoa.framework in Frameworks */,
@@ -163,6 +178,8 @@
 		4654CD2D1636472E00CADDB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4699407816704AFD00FD8FAD /* Carbon.framework */,
+				4699406416703B0A00FD8FAD /* IOKit.framework */,
 				4669A71116587E7D004A075B /* AudioToolbox.framework */,
 				4654CD2E1636472E00CADDB0 /* Cocoa.framework */,
 				4654CD4F1636472F00CADDB0 /* SenTestingKit.framework */,
@@ -186,6 +203,8 @@
 		4654CD341636472E00CADDB0 /* Shack */ = {
 			isa = PBXGroup;
 			children = (
+				4699406016703A9A00FD8FAD /* SKApplication.h */,
+				4699406116703A9A00FD8FAD /* SKApplication.m */,
 				4654CD401636472E00CADDB0 /* SKAppDelegate.h */,
 				4654CD411636472E00CADDB0 /* SKAppDelegate.m */,
 				4654CD431636472E00CADDB0 /* MainMenu.xib */,
@@ -262,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				4669A70C16587E25004A075B /* WKAudioStreamer */,
+				4699409D1670531400FD8FAD /* SPMediaKeyTap */,
 				4654CD7416364C7B00CADDB0 /* GCDAsyncSocket */,
 			);
 			name = External;
@@ -276,6 +296,26 @@
 			);
 			name = WKAudioStreamer;
 			sourceTree = "<group>";
+		};
+		4699409D1670531400FD8FAD /* SPMediaKeyTap */ = {
+			isa = PBXGroup;
+			children = (
+				4699409E1670533600FD8FAD /* SPInvocationGrabbing */,
+				4699409A167052BB00FD8FAD /* SPMediaKeyTap.h */,
+				4699409B167052BB00FD8FAD /* SPMediaKeyTap.m */,
+			);
+			name = SPMediaKeyTap;
+			sourceTree = "<group>";
+		};
+		4699409E1670533600FD8FAD /* SPInvocationGrabbing */ = {
+			isa = PBXGroup;
+			children = (
+				469940A21670533600FD8FAD /* NSObject+SPInvocationGrabbing.h */,
+				469940A31670533600FD8FAD /* NSObject+SPInvocationGrabbing.m */,
+			);
+			name = SPInvocationGrabbing;
+			path = external/SPMediaKeyTap/SPInvocationGrabbing;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -404,6 +444,9 @@
 				46325C28163F79F9004F2129 /* SKPlaylistManager.m in Sources */,
 				4691A20F1642276E00698DA3 /* SKXiamiLinkHandler.m in Sources */,
 				46BAD3AC165F25CA005CB014 /* WKAudioStreamer.m in Sources */,
+				4699406216703A9A00FD8FAD /* SKApplication.m in Sources */,
+				4699409C167052BB00FD8FAD /* SPMediaKeyTap.m in Sources */,
+				469940A71670533600FD8FAD /* NSObject+SPInvocationGrabbing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
