@@ -27,4 +27,6 @@
 + (void)busy;
 + (void)busyDone;
 
+- (IBAction)onDeleteKeyPressed:(id)sender;
+
 @end

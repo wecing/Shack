@@ -25,6 +25,9 @@
 // *serious*: remember to update the side panel when new playlists are added...
 + (void)appendSongs:(NSArray *)songs toPlaylist:(NSString *)playlist;
 
++ (void)removeSongAtIndex:(int)s_idx;
++ (void)removeSongAtIndex:(int)s_idx inPlaylist:(NSString *)playlist;
+
 // return the current playlist. (not the default one)
 + (NSArray *)playlist;
 

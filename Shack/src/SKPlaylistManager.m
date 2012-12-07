@@ -8,6 +8,7 @@
 
 #import "SKPlaylistManager.h"
 #import "SKSongTableController.h"
+#import "SKAudioPlayer.h"
 
 static NSMutableDictionary *playlistsDict = nil;
 
@@ -41,6 +42,20 @@ static NSString *currentPlaylist = @"default";
     if ([currentPlaylist isEqualToString:playlist]) {
         [SKSongTableController tableReloadData];
     }
+    
+    [SKAudioPlayer reloadStreamerList];
+}
+
++ (void)removeSongAtIndex:(int)s_idx {
+    [self removeSongAtIndex:s_idx inPlaylist:defaultPlaylist];
+}
+
++ (void)removeSongAtIndex:(int)s_idx inPlaylist:(NSString *)playlist {
+    NSMutableArray *list = [playlistsDict objectForKey:playlist];
+    if (list == nil || s_idx < 0 || s_idx >= [list count]) {
+        return;
+    }
+    [list removeObjectAtIndex:s_idx];
 }
 
 + (NSArray *)playlist {

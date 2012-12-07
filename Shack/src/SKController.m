@@ -63,6 +63,9 @@ static int busy_cnt = 0;
     } else {
         [button setTitle:@"Play"];
     }
+
+    // deselect all items.
+    [[self songTable] selectRowIndexes:[NSIndexSet new] byExtendingSelection:NO];
 }
 
 + (void)busy {
@@ -76,6 +79,19 @@ static int busy_cnt = 0;
     busy_cnt--;
     if (busy_cnt == 0) {
         [[[self sharedInstance] busyIndicator] stopAnimation:self];
+    }
+}
+
+- (IBAction)onDeleteKeyPressed:(id)sender {
+    NSLog(@"\n-> delete pressed!"); // DEBUG
+    
+    [SKAudioPlayer removeIndexes:[[self songTable] selectedRowIndexes]];
+
+    // deselect all items.
+    [[self songTable] selectRowIndexes:[NSIndexSet new] byExtendingSelection:NO];
+    
+    if ([SKAudioPlayer curIdx] == -1) {
+        [[self playPauseButton] setTitle:@"Play"];
     }
 }
 

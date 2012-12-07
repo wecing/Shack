@@ -25,4 +25,8 @@
 + (int)curIdx;
 + (BOOL)curPlaying;
 
++ (void)reloadStreamerList;
+
++ (void)removeIndexes:(NSIndexSet *)indexes_set;
+
 @end

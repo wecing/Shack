@@ -97,7 +97,16 @@ static BOOL cur_playing = NO;
     NSLog(@"\n-> startPlayingSongAtIndex:%ld called", idx);
     
     NSArray *song_list = [SKPlaylistManager playlist];
-    if (idx >= [song_list count]) {
+    if (idx >= [song_list count] || idx < 0) {
+        NSLog(@"\n-> huh?");
+        cur_idx = -1;
+        cur_playing = NO;
+        if (streamer != nil) {
+            [streamer pause];
+            streamer = nil;
+        }
+        [SKSongTableController tableReloadData];
+        [[[self sharedInstance] progressLabel] setStringValue:@""];
         return NO;
     }
     
@@ -266,6 +275,54 @@ static BOOL cur_playing = NO;
 - (void)onPlayerBlockingEnded:(WKAudioStreamer *)_streamer {
     if (_streamer == streamer) {
         [SKController busyDone];
+    }
+}
+
++ (void)reloadStreamerList {
+    if (cur_idx == -1) {
+        streamer_dict = [NSMutableDictionary new];
+    } else {
+        streamer_dict = [self buildStreamerDict:cur_idx songList:[SKPlaylistManager playlist]];
+    }
+}
+
++ (void)removeIndexes:(NSIndexSet *)indexes_set {
+    // *** be careful ***
+    // if indexes_set doesn't contain cur_idx, it's still playing!
+    //
+    // cur_idx may be -1!
+    // indexes_set may contain all indexes!
+    if ([indexes_set containsIndex:cur_idx]) {
+        [streamer pause];
+        streamer = nil;
+    }
+    
+    int new_idx = 0; // yes, 0, not -1.
+    NSArray *playlist = [SKPlaylistManager playlist];
+    for (int i = (int)[playlist count] - 1; i >= 0; i--) {
+        if ([indexes_set containsIndex:i]) {
+            NSString *location = [(NSDictionary *)[playlist objectAtIndex:i] objectForKey:@"location"];
+            [SKPlaylistManager removeSongAtIndex:i];
+            WKAudioStreamer *as = [streamer_dict objectForKey:location];
+            if (as != nil) {
+                [as pauseStreaming];
+            }
+        } else if (i < cur_idx) {
+            new_idx++;
+        }
+    }
+    
+    if (![indexes_set containsIndex:cur_idx]) {
+        [streamer play];
+        cur_idx = new_idx;
+        streamer_dict = [self buildStreamerDict:cur_idx songList:[SKPlaylistManager playlist]];
+        [SKSongTableController tableReloadData];
+    } else {
+        if (cur_playing) {
+            [self startPlayingSongAtIndex:new_idx];
+        } else {
+            [self startPlayingSongAtIndex:-1];
+        }
     }
 }
 
