@@ -18,6 +18,8 @@
 + (BOOL)pause;
 
 + (BOOL)startPlayingSongAtIndex:(NSInteger)idx;
++ (void)fastForward;
++ (void)rewind;
 
 // singleton is for the delegate only.
 + (id)sharedInstance;

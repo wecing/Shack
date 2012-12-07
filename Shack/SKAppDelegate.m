@@ -71,12 +71,14 @@
                 
 			case NX_KEYTYPE_FAST:
 				// debugString = [@"Ffwd pressed" stringByAppendingString:debugString];
-                NSLog(@"\n-> *** fast forward pressed ***");
+                // NSLog(@"\n-> *** fast forward pressed ***");
+                [SKController fastForward];
 				break;
                 
 			case NX_KEYTYPE_REWIND:
 				// debugString = [@"Rewind pressed" stringByAppendingString:debugString];
-                NSLog(@"\n-> *** rewind pressed ***");
+                // NSLog(@"\n-> *** rewind pressed ***");
+                [SKController rewind];
 				break;
 			// default:
 			// 	   debugString = [NSString stringWithFormat:@"Key %d pressed%@", keyCode, debugString];

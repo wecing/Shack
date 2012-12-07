@@ -95,4 +95,13 @@ static int busy_cnt = 0;
     }
 }
 
++ (void)fastForward {
+    [SKAudioPlayer fastForward];
+}
+
++ (void)rewind {
+    [SKAudioPlayer rewind];
+}
+
+
 @end

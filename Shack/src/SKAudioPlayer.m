@@ -159,6 +159,20 @@ static BOOL cur_playing = NO;
     return ret;
 }
 
++ (void)fastForward {
+    if (cur_idx != -1) {
+        int n = (int)[[SKPlaylistManager playlist] count];
+        [self startPlayingSongAtIndex:(cur_idx+1)%n];
+    }
+}
+
++ (void)rewind {
+    if (cur_idx != -1) {
+        int n = (int)[[SKPlaylistManager playlist] count];
+        [self startPlayingSongAtIndex:(cur_idx-1+n)%n];
+    }
+}
+
 - (void)onStreamingFinished:(WKAudioStreamer *)_streamer {
     @synchronized(self) {
         NSLog(@"\n-> streaming finished."); // DEBUG

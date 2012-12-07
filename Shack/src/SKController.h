@@ -29,4 +29,7 @@
 
 - (IBAction)onDeleteKeyPressed:(id)sender;
 
++ (void)fastForward;
++ (void)rewind;
+
 @end
