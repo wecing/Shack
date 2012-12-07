@@ -1,14 +1,22 @@
-### About
+## About
 
-Nothing interesting for now. Seriously.
+Shack is an unofficial Mac OS client for [xiami.com](www.xiami.com).
+
+![Shack screenshot](https://raw.github.com/wecing/Shack/master/resources/screenshot.png "Shack")
+
+(Why am I writing in English?)
+
+With Shack, you could play songs hosted on xiami directly from the webpage, just like how you used to.
+
+Shack itself, consists of three parts: the Mac client, a browser plug-in, and an userscript.
 
 ### Building
 
-If you really want to do so...
+Shack contains submodules, so please use --recursive when cloning the repo.
 
-Shack itself doesn't have any extra dependencies; ___GCDAsyncSocket___ is already included.
+The client uses ___WKAudioStreamer___ (which is written by myself), ___GDCAsyncSocket___ and ___SPMediaKeyTap___.
 
-But Shack's browser plugin is built with ___FireBreath___. To compile the plugin, download FireBreath first; then:
+Shack's browser plugin is built with ___FireBreath___. To compile the plugin, download FireBreath first; then:
 
 	1. cd Shack/external/ShackBrowserHelperPlugin
 	2. path-to-firebreath/prepmac.sh project/ build/
@@ -22,4 +30,4 @@ If you don't have `xcodebuild`, download `Command Line Tools` from Xcode (`Prefe
 
 ### Installing the userscript
 
-To change the webpage on xiami.com, you would have to install GreaseMonkey. The userscript is under `Shack/external/ShackAdapter`.
+To change the webpage on xiami.com, you would have to install GreaseMonkey. After that you need to install the userscript, which is under `Shack/external/ShackAdapter`.
