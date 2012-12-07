@@ -22,4 +22,7 @@
 // singleton is for the delegate only.
 + (id)sharedInstance;
 
++ (int)curIdx;
++ (BOOL)curPlaying;
+
 @end

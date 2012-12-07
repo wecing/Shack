@@ -8,13 +8,29 @@
 
 #import "SKSongTableController.h"
 #import "SKPlaylistManager.h"
+#import "SKAudioPlayer.h"
 
 @interface SKSongTableController ()
 // @property NSMutableArray *tracksInfoDictArray;
 @property IBOutlet NSTableView *tableView;
 @end
 
+static NSImage *g_playImage = nil;
+static NSImage *g_pauseImage = nil;
+// static NSImageCell *g_playCell = nil;
+// static NSImageCell *g_pauseCell = nil;
+
 @implementation SKSongTableController
+
++ (void)initialize {
+    g_playImage = [NSImage imageNamed:@"play"];
+    g_pauseImage = [NSImage imageNamed:@"pause"];
+    
+    // g_playCell = [NSImageCell new];
+    // g_pauseCell = [NSImageCell new];
+    // [g_playCell setObjectValue:[NSImage imageNamed:@"play"]];
+    // [g_pauseCell setObjectValue:[NSImage imageNamed:@"pause"]];
+}
 
 + (id)sharedInstance {
     static id singleton = nil;
@@ -68,7 +84,30 @@
                             row:(NSInteger)rowIndex {
     NSString *columnIdentifier = [tableColumn identifier];
     NSDictionary *d = [[SKPlaylistManager playlist] objectAtIndex:rowIndex];
-    return [d objectForKey:columnIdentifier];
+    if ([columnIdentifier isEqualToString:@"player_status"]) {
+        // return @"p";
+        // return g_playCell;
+        /*
+        if (rowIndex % 3 == 0) {
+            return nil;
+        } else if (rowIndex % 3 == 1) {
+            return g_playImage;
+        } else {
+            return g_pauseImage;
+        }
+         */
+        if (rowIndex != [SKAudioPlayer curIdx]) {
+            return nil;
+        } else {
+            if ([SKAudioPlayer curPlaying]) {
+                return g_playImage;
+            } else {
+                return g_pauseImage;
+            }
+        }
+    } else {
+        return [d objectForKey:columnIdentifier];
+    }
 }
 
 @end

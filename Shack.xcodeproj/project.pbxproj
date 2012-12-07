@@ -31,6 +31,9 @@
 		4654CD7D1636519500CADDB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4654CD7C1636519500CADDB0 /* Security.framework */; };
 		4669A71216587E7D004A075B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4669A71116587E7D004A075B /* AudioToolbox.framework */; };
 		4691A20F1642276E00698DA3 /* SKXiamiLinkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4691A20E1642276E00698DA3 /* SKXiamiLinkHandler.m */; };
+		4699401516717A15000463C1 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 4699401416717A15000463C1 /* play.png */; };
+		4699401716717B98000463C1 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4699401616717B98000463C1 /* pause.png */; };
+		4699401916717F70000463C1 /* Akashi_rounded.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4699401816717F70000463C1 /* Akashi_rounded.icns */; };
 		4699406216703A9A00FD8FAD /* SKApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699406116703A9A00FD8FAD /* SKApplication.m */; };
 		4699406516703B0A00FD8FAD /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4699406416703B0A00FD8FAD /* IOKit.framework */; };
 		4699407916704AFD00FD8FAD /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4699407816704AFD00FD8FAD /* Carbon.framework */; };
@@ -39,7 +42,6 @@
 		46A17B12163A157A002B85CF /* SKSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A17B11163A157A002B85CF /* SKSplitView.m */; };
 		46B06F081639EE0C00A93F52 /* SKSplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */; };
 		46BAD3AC165F25CA005CB014 /* WKAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BAD3AB165F25CA005CB014 /* WKAudioStreamer.m */; };
-		46D080D6166FEE9F00B70E69 /* Akashi_rounded.icns in Resources */ = {isa = PBXBuildFile; fileRef = 46D080D5166FEE9F00B70E69 /* Akashi_rounded.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,9 @@
 		4669A71116587E7D004A075B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4691A20D1642276E00698DA3 /* SKXiamiLinkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKXiamiLinkHandler.h; path = src/SKXiamiLinkHandler.h; sourceTree = "<group>"; };
 		4691A20E1642276E00698DA3 /* SKXiamiLinkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKXiamiLinkHandler.m; path = src/SKXiamiLinkHandler.m; sourceTree = "<group>"; };
+		4699401416717A15000463C1 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = resources/play.png; sourceTree = SOURCE_ROOT; };
+		4699401616717B98000463C1 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = resources/pause.png; sourceTree = SOURCE_ROOT; };
+		4699401816717F70000463C1 /* Akashi_rounded.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Akashi_rounded.icns; path = ../resources/Akashi_rounded.icns; sourceTree = "<group>"; };
 		4699406016703A9A00FD8FAD /* SKApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKApplication.h; path = src/SKApplication.h; sourceTree = "<group>"; };
 		4699406116703A9A00FD8FAD /* SKApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKApplication.m; path = src/SKApplication.m; sourceTree = "<group>"; };
 		4699406416703B0A00FD8FAD /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -110,7 +115,6 @@
 		46B06F071639EE0C00A93F52 /* SKSplitViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSplitViewDelegate.m; path = src/SKSplitViewDelegate.m; sourceTree = "<group>"; };
 		46BAD3AA165F25CA005CB014 /* WKAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKAudioStreamer.h; path = external/WKAudioStreamer/WKAudioStreamer.h; sourceTree = SOURCE_ROOT; };
 		46BAD3AB165F25CA005CB014 /* WKAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WKAudioStreamer.m; path = external/WKAudioStreamer/WKAudioStreamer.m; sourceTree = SOURCE_ROOT; };
-		46D080D5166FEE9F00B70E69 /* Akashi_rounded.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Akashi_rounded.icns; path = ../Akashi_rounded.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,12 +212,12 @@
 				4654CD401636472E00CADDB0 /* SKAppDelegate.h */,
 				4654CD411636472E00CADDB0 /* SKAppDelegate.m */,
 				4654CD431636472E00CADDB0 /* MainMenu.xib */,
-				46D080D5166FEE9F00B70E69 /* Akashi_rounded.icns */,
 				4654CD461636472E00CADDB0 /* Shack.xcdatamodeld */,
 				4654CD7116364B1E00CADDB0 /* README.md */,
 				46325C1A163EA2D9004F2129 /* TO_BE_FIXED.md */,
 				4654CD351636472E00CADDB0 /* Supporting Files */,
 				4654CD681636482C00CADDB0 /* src */,
+				4699400E167173D0000463C1 /* resources */,
 			);
 			path = Shack;
 			sourceTree = "<group>";
@@ -295,6 +299,16 @@
 				46BAD3AB165F25CA005CB014 /* WKAudioStreamer.m */,
 			);
 			name = WKAudioStreamer;
+			sourceTree = "<group>";
+		};
+		4699400E167173D0000463C1 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				4699401816717F70000463C1 /* Akashi_rounded.icns */,
+				4699401616717B98000463C1 /* pause.png */,
+				4699401416717A15000463C1 /* play.png */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 		4699409D1670531400FD8FAD /* SPMediaKeyTap */ = {
@@ -394,7 +408,9 @@
 				4654CD451636472E00CADDB0 /* MainMenu.xib in Resources */,
 				4654CD7216364B1E00CADDB0 /* README.md in Resources */,
 				46325C1B163EA2DA004F2129 /* TO_BE_FIXED.md in Resources */,
-				46D080D6166FEE9F00B70E69 /* Akashi_rounded.icns in Resources */,
+				4699401516717A15000463C1 /* play.png in Resources */,
+				4699401716717B98000463C1 /* pause.png in Resources */,
+				4699401916717F70000463C1 /* Akashi_rounded.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

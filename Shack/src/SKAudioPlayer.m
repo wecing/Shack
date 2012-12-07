@@ -10,6 +10,7 @@
 #import "SKPlaylistManager.h"
 #import "WKAudioStreamer.h"
 #import "SKController.h"
+#import "SKSongTableController.h"
 
 // save data of no more than 3 songs at once.
 #define MAX_SONGS_SAVED 3
@@ -21,7 +22,8 @@
 static NSMutableDictionary *streamer_dict = nil;
 // static NSMutableArray *cur_streamed_locs = nil;
 static WKAudioStreamer *streamer = nil;
-// static int cur_idx = -1;
+static int cur_idx = -1;
+static BOOL cur_playing = NO;
 // static NSString *cur_loc = nil;
 
 @implementation SKAudioPlayer
@@ -31,20 +33,41 @@ static WKAudioStreamer *streamer = nil;
     // cur_streamed_locs = [NSMutableArray new];
 }
 
++ (int)curIdx {
+    return cur_idx;
+}
+
++ (BOOL)curPlaying {
+    return cur_playing;
+}
+
 + (BOOL)play {
+    BOOL ret;
     if (streamer == nil && [[SKPlaylistManager playlist] count] > 0) {
-        return [self startPlayingSongAtIndex:0];
+        ret = [self startPlayingSongAtIndex:0];
     } else {
-        return [streamer play];
+        ret = [streamer play];
     }
+    if (cur_playing != ret) {
+        cur_playing = ret;
+        [SKSongTableController tableReloadData];
+    }
+    return ret;
 }
 
 + (BOOL)pause {
+    BOOL ret;
     if (streamer != nil) {
-        return [streamer pause];
+        ret = [streamer pause];
     } else {
-        return NO;
+        ret = NO;
     }
+    
+    if (cur_playing == ret) {
+        cur_playing = !ret;
+        [SKSongTableController tableReloadData];
+    }
+    return ret;
 }
 
 + (id)sharedInstance {
@@ -70,6 +93,7 @@ static WKAudioStreamer *streamer = nil;
 
 // force re-streaming songs iff the song requested is exactly the currently playing one.
 + (BOOL)startPlayingSongAtIndex:(NSInteger)idx {
+    BOOL ret;
     NSLog(@"\n-> startPlayingSongAtIndex:%ld called", idx);
     
     NSArray *song_list = [SKPlaylistManager playlist];
@@ -78,7 +102,7 @@ static WKAudioStreamer *streamer = nil;
     }
     
     // select the idx-th item.
-    [[[self sharedInstance] songTable] selectRowIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
+    // [[[self sharedInstance] songTable] selectRowIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
     
     NSString *loc = [(NSDictionary *)[song_list objectAtIndex:idx] objectForKey:@"location"];
     
@@ -88,12 +112,12 @@ static WKAudioStreamer *streamer = nil;
         streamer = [WKAudioStreamer streamerWithURLString:loc delegate:[self sharedInstance]];
         [streamer_dict setObject:streamer forKey:loc];
         // cur_loc = loc;
-        return [streamer play];
+        ret = [streamer play];
     } else if ([[streamer requestedURL] isEqualToString:loc]) {
         NSLog(@"Hi? 3"); // DEBUG
         // exactly the currently playing one
         [streamer restartStreaming]; // re-stream!
-        return [streamer play];
+        ret = [streamer play];
     } else {
         NSLog(@"Hi? 4"); // DEBUG
         
@@ -113,8 +137,17 @@ static WKAudioStreamer *streamer = nil;
         if ([streamer isPlayerBlocking]) {
             [SKController busy];
         }
-        return [streamer play];
+        ret = [streamer play];
     }
+    
+    if (ret) {
+        cur_idx = (int)idx;
+        cur_playing = YES;
+    }
+    
+    [SKSongTableController tableReloadData];
+    
+    return ret;
 }
 
 - (void)onStreamingFinished:(WKAudioStreamer *)_streamer {
