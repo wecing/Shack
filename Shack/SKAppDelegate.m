@@ -249,4 +249,12 @@
     return NSTerminateNow;
 }
 
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {
+    // NSLog(@"hello! %d", flag);
+    if (!flag) {
+        [[self window] makeKeyAndOrderFront:self];
+    }
+    return NO;
+}
+
 @end
