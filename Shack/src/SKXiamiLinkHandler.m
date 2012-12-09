@@ -80,6 +80,7 @@ static NSMutableArray *connArray = nil;
     
     NSArray *list = [SKXiamiLinkHandler decodeXML:fullData];
     [SKPlaylistManager appendSongs:list];
+    [SKController playIfNotPaused];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

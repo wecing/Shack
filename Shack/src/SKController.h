@@ -18,6 +18,7 @@
 
 + (id)sharedInstance;
 
++ (void)playIfNotPaused;
 - (IBAction)togglePlayPause:(id)sender;
 
 - (void)doubleClickSongItem:(id)sender;

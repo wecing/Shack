@@ -92,6 +92,12 @@ void ShackBrowserHelperPluginAPI::testEvent()
 void ShackBrowserHelperPluginAPI::addSongs(const std::string& msg) {
     int pid = fork();
     if (pid == 0) {
+        int ret = system("ps x | grep 'Shack.app' | grep -v 'grep'");
+        if (ret != 0) { // not found shack
+            system("open -a Shack");
+            sleep(1);
+        }
+
         const char *songs = msg.c_str();
         int portno = 6578;
 

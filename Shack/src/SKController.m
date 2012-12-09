@@ -42,6 +42,15 @@ static int busy_cnt = 0;
 
 // FIXME: disable play button when current playlist is empty?
 
++ (void)playIfNotPaused {
+    SKController *controller = [self sharedInstance];
+    NSButton *but = [controller playPauseButton];
+    if ([[but title] isEqualToString:@"Play"] && [SKAudioPlayer curIdx] == -1) {
+        [but setTitle:@"Pause"];
+        [SKAudioPlayer play];
+    }
+}
+
 - (IBAction)togglePlayPause:(id)sender {
     NSButton *button = [self playPauseButton];
     if ([[button title] isEqualToString:@"Play"]) {

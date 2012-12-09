@@ -50,7 +50,6 @@
     NSString *link = [[NSString alloc] initWithBytes:str length:strlen(str) encoding:NSASCIIStringEncoding];
     NSString *fullLink = [@"http://www.xiami.com" stringByAppendingString:link];
     [SKXiamiLinkHandler feedLink:fullLink];
-
 }
 
 @end
