@@ -1528,7 +1528,7 @@
 															<string key="NSFrameSize">{594, 321}</string>
 															<reference key="NSSuperview" ref="543345745"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="701554879"/>
+															<reference key="NSNextKeyView" ref="444171724"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -1744,7 +1744,7 @@
 											<string key="NSFrame">{{0, -1}, {594, 338}}</string>
 											<reference key="NSSuperview" ref="514050719"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="444171724"/>
+											<reference key="NSNextKeyView" ref="543345745"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133680</int>
 											<reference key="NSVScroller" ref="701554879"/>
@@ -1804,7 +1804,6 @@
 							<string key="NSFrame">{{445, 23}, {133, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="414675254">
@@ -4556,7 +4555,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1196</int>
+			<int key="maxID">1197</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

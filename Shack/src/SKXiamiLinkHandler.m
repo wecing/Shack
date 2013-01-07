@@ -179,8 +179,10 @@ static NSMutableArray *connArray = nil;
         NSXMLElement *track = [tracks objectAtIndex:i];
         for (NSUInteger j = 0; j < [track childCount]; j++) {
             NSXMLNode *node = [track childAtIndex:j];
-            NSString *nodeValue = [[node childAtIndex:0] stringValue];
-            [d setObject:nodeValue forKey:[node name]];
+            if ([node childCount] > 0) { // <ms>...</ms> is now replaced with <ms/>.
+                NSString *nodeValue = [[node childAtIndex:0] stringValue];
+                [d setObject:nodeValue forKey:[node name]];
+            }
         }
         [tracksInfoDictArray addObject:d];
     }
